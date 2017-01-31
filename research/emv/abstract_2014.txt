@@ -1,0 +1,31 @@
+Andrea Barisani <andrea@inversepath.com>
+Daniele Bianco <daniele@inversepath.com>
+
+Practical EMV PIN interception and fraud detection
+
+- Abstract --------------------------------------------------------------------
+
+The EMV global standard for electronic payments is widely used for
+inter-operation between chip equipped credit/debit cards, Point of Sales
+devices and ATMs.
+
+In 2011, our "Chip & PIN is definitely broken" presentation uncovered an EMV
+design flaw that, by means of chip skimmers, allows for arbitrary PIN
+harvesting.
+
+Since then, by consulting on EMV implementations and their behaviour under
+effective attacks, Inverse Path has assisted issuing banks, as well as
+cardholders, with successful resolution of cases involving wrongful liability
+for fraudulent charges.
+
+Our updated research effort identifies and verifies new interactions between
+previous EMV attacks, which even further affect the protection, or lack of,
+that EMV provides for the PIN.
+
+This presentation aims to fully empower both cardholders and issuers with an
+understanding of all applicable attacks, while also illustrating the relevant
+EMV fraud detection markers.
+
+Such information is vital to enable cardholders to request the correct and
+relevant information necessary to claim fraudulent charges and to enable
+issuers and processors to prevent fraud in the first place.
