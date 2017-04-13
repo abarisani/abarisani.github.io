@@ -1,8 +1,14 @@
+Authors: Andrea Barisani <andrea@inversepath.com>
+         Daniele Bianco <daniele@inversepath.com>
 
-Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using
-Optical Sampling Of Mechanical Energy And Power Line Leakage
+Title: Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using
+       Optical Sampling Of Mechanical Energy And Power Line Leakage
 
-------------------------------------------------------------------------------
+First presentation: March 2009 - CanSecWest.
+
+Video: https://www.youtube.com/watch?v=Amnv4ncqKtA
+
+- Abstract --------------------------------------------------------------------
 
 TEMPEST attacks, exploiting Electro Magnetic emissions in order to gather data,
 are often mentioned by the security community, movies and wanna-be spies (or
@@ -25,3 +31,5 @@ required.
 We will show in detail the two attacks and all the necessary instructions for
 setting up the equipment. As usual cool gear and videos are going to be
 featured in order to maximize the presentation.
+
+-------------------------------------------------------------------------------

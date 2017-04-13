@@ -1,8 +1,14 @@
-  Authors: Andrea Barisani <andrea@inversepath.com>
-           Daniele Bianco <daniele@inversepath.com>
+Authors: Andrea Barisani <andrea@inversepath.com>
+         Daniele Bianco <daniele@inversepath.com>
 
-Injecting RDS-TMC Traffic Information Signals a.k.a. How to freak out your
-                                                     Satellite Navigation.
+Title: Injecting RDS-TMC Traffic Information Signals
+       a.k.a. How to freak out your Satellite Navigation.
+
+First presentation: April 2007 - CanSecWest.
+
+Video: https://www.youtube.com/watch?v=xgGgRKi1CGo
+
+- Abstract --------------------------------------------------------------------
 
   RDS-TMC is a standard based on RDS (Radio Data System) for communicating over
   FM radio Traffic Information for Satellite Navigation Systems.
@@ -27,3 +33,5 @@ Injecting RDS-TMC Traffic Information Signals a.k.a. How to freak out your
 
   In order to maximize the presentation we'll also demo the injection...
   hopefully at low power so that we won't piss off local radio broadcasts.
+
+-------------------------------------------------------------------------------

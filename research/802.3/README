@@ -1,9 +1,14 @@
-Andrea Barisani <andrea@inversepath.com>
-Daniele Bianco <daniele@inversepath.com>
+Authors: Andrea Barisani <andrea@inversepath.com>
+         Daniele Bianco <daniele@inversepath.com>
 
-Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface.
+Title: Fully arbitrary 802.3 packet injection: maximizing the Ethernet
+       attack surface.
 
-- Abstract ---------------------------------------------------------------------
+First presentation: July 2013 - Black Hat USA.
+
+Video: https://www.youtube.com/watch?v=j_sqwo1xjIA
+
+- Abstract --------------------------------------------------------------------
 
 It is generally assumed that sending and sniffing arbitrary Fast Ethernet
 packets can be performed with standard Network Interface Cards (NIC) and
@@ -25,3 +30,5 @@ anomalies and Ethernet Packet-In-Packet injection. These results are analyzed
 in relation to their security relevance and scenarios of application. Finally,
 conditions for a successful remote Ethernet Packet-In-Packet injection will be
 discussed and demonstrated for what is believed to be the first time in public.
+
+-------------------------------------------------------------------------------
