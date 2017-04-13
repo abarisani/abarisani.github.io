@@ -1,0 +1,16 @@
+Andrea Barisani <andrea@inversepath.com>
+
+- Real-life experiences in avionics security assessment ----------------------
+
+This directory contains a presentation that was developed for an event at
+Politecnico di Milano, named "The Internet of Broken Things" (September 2016).
+
+The presentation aimed at provide some insights in our long experience with
+security testing in the aviation sector.
+
+The material is quite limited to the heavy restrictions in disclosing actual
+projects, it however attempts to give a representative overview.
+
+The following video, to put slides in perspective, is highly recommended:
+
+  https://www.youtube.com/watch?v=xtSmPgXw34I
