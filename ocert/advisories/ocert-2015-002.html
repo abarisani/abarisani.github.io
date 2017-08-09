@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2015-002 e2fsprogs input sanitization errors</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The <a href="http://e2fsprogs.sourceforge.net">e2fsprogs</a> package
+    is a set of open source utilities for ext2, ext3 and ext4 filesytems.</p>
+
+    <p>The libext2fs library, part of e2fsprogs and utilized by its utilities,
+    is affected by a boundary check error on block group descriptor information,
+    leading to a heap based buffer overflow.</p>
+
+    <p>A specially crafted filesystem image can be used to trigger the vulnerability.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://e2fsprogs.sourceforge.net">e2fsprogs</a> &lt; 1.42.12</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://e2fsprogs.sourceforge.net">e2fsprogs</a> &gt;= 1.42.12</p>
+
+    <p><b>Credit</b>: vulnerability report from Jose Duart of Google Security Team
+    &lt;jduart AT google.com&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0247">CVE-2015-0247</a></p>
+
+    <b>Timeline</b>:
+
+    <p>
+    2015-01-19: vulnerability report received<br/>
+    2015-01-29: contacted affected vendors, assigned CVEs<br/>
+    2015-02-05: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4">http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4</a>
+</div>
+</body>
+</html>

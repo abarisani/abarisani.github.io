@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2008-003 libpng zero-length chunks incorrect handling</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>Applications using <a href="http://www.libpng.org">libpng</a> that install
+    unknown chunk handlers, or copy unknown chunks, may be vulnerable to a security
+    issue which may result in incorrect output, information leaks, crashes, or
+    arbitrary code execution.</p>
+
+    <p>The issue involves libpng incorrectly handling zero length chunks which results in
+    uninitialized memory affecting the control flow of the application.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.libpng.org">libpng</a> &gt;= 1.0.6, &lt;= 1.0.32 &amp; &gt;= 1.2.0, &lt;= 1.2.26 [*]</p>
+
+    <p>* - the libpng project indicates that build options
+    PNG_READ_UNKNOWN_CHUNKS_SUPPORTED or PNG_READ_USER_CHUNKS_SUPPORTED (default
+    configuration) are affected.</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.libpng.org">libpng</a> &gt;= 1.0.33, &gt;= 1.2.27 </p>
+
+    <p><b>Credit</b>: Tavis Ormandy, oCERT Team | Google Security Team</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1382">CVE-2008-1382</a></p>
+
+    <b>Timeline</b>:
+
+    <p>2008-04-05: contacted libpng maintainers<br/>
+    2008-04-05: vendor confirms<br/>
+    2008-04-05: verification of vendor suggested patch<br/>
+    2008-04-12: libpng-1.2.27beta01 released<br/>
+    2008-04-12: libpng project advisory released<br/>
+    2008-04-12: advisory release</p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://libpng.sourceforge.net/Advisory-1.2.26.txt">http://libpng.sourceforge.net/Advisory-1.2.26.txt</a></p>
+
+    <p><b>Permalink</b>:<br/>
+    <a href="ocert-2008-003.html">oCERT-2008-003</a></p>
+</div>
+</body>
+</html>

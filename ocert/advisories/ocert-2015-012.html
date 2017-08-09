@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2015-012 Ganeti multiple issues</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p><a href="https://code.google.com/p/ganeti">Ganeti</a>, an open
+    source virtualization manager, suffers from multiple issues in its
+    RESTful control interface (RAPI).</p>
+
+    <p>The distributed replicated storage (DRBD) secret is leaked by the
+    RAPI interface when job results are requested.<br/>
+    Leveraging on the knowledge of this secret, a malicious user who had
+    already gained access to the storage network of the cluster can
+    retrieve instance data more easily and reliably.</p>
+
+    <p>The RAPI interface is also vulnerable to a DoS condition, triggered
+    via SSL parameter renegotiation issued by a malicious client.<br/>
+    The condition leads to resource exhaustion on the master node.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="https://code.google.com/p/ganeti">Ganeti</a> &lt;= 2.9.6, &lt;= 2.10.7, &lt;= 2.11.7, &lt;= 2.12.5, &lt;= 2.13.2, &lt;= 2.14.1, &lt;= 2.15.1</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="https://code.google.com/p/ganeti">Ganeti</a> &gt;= 2.9.7, &gt;= 2.10.8, &gt;= 2.11.8, &gt;= 2.12.6, &gt;= 2.13.3, &gt;= 2.14.2, &gt;= 2.15.2</p>
+
+    <p><b>Credit</b>: vulnerability reported by Pierre Kim &lt;pierre [dot] kim [dot] sec [at] gmail [dot] com&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7944">CVE-2015-7944</a> (DoS),
+                   <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7945">CVE-2015-7945</a> (DRBD secret leak)</p>
+
+    <b>Timeline</b>:
+
+    <p>
+    2015-12-21: vulnerability report received<br/>
+    2015-12-24: contacted affected vendors<br/>
+    2015-12-30: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://downloads.ganeti.org/releases">http://downloads.ganeti.org/releases</a></p>
+</div>
+</body>
+</html>

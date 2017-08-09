@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2009-006 Android improper package verification when using shared uids</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>
+      <a href="http://android.com">Android</a>, an open source mobile phone platform, improperly checks
+      developer certificates when installing packages that request the shared
+      user identifier (uid) permission.
+    </p>
+
+    <p>
+      Normally, Android applications will be allowed to share a uid if the
+      packages are all signed by the same developer certificate and request
+      permission to do so at install-time.  This allows for packages from the
+      same author to share data.  Without enforcement of that behavior, it is
+      possible for any application to be installed in such a manner that it
+      gains access to another (existing) application's data.
+    </p>
+    <p>A <a href="http://android.git.kernel.org/?p=platform/frameworks/base.git;a=commit;h=5d6d773fab559fdc12e553d60d789f3991ac552c">patch</a>
+       has been made available by Android.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://android.com">Android</a> &gt;= 1.5 CRB17, &lt;= 1.5 CRB42</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://android.com">Android</a> &gt;= 1.5 CRB43</p>
+    <p><small>(Android 1.0 and 1.1 are unaffected.)</small></p>
+
+    <p><b>Credit</b>: Panasonic.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1754">CVE-2009-1754</a>
+    </p>
+
+    <b>Timeline</b>:
+
+    <p>
+2009-05-14: Panasonic reported the issue to the Android Security Team<br/>
+2009-05-18: Android Security Team requested assistance from oCERT<br/>
+2009-05-19: oCERT requested CVE assignment<br/>
+2009-05-22: assigned CVE<br/>
+2009-05-22: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://android.git.kernel.org/?p=platform/frameworks/base.git;a=commit;h=5d6d773fab559fdc12e553d60d789f3991ac552c">
+    http://android.git.kernel.org/?p=platform/frameworks/base.git;a=commit;h=5d6d773fab559fdc12e553d60d789f3991ac552c</a>
+    </p>
+</div>
+</body>
+</html>

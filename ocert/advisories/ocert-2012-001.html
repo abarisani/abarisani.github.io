@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2012-001 multiple implementations denial-of-service via MurmurHash algorithm collision</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>A variety of programming languages suffer from a denial-of-service (DoS)
+    condition against storage functions of key/value pairs in hash data structures,
+    the condition can be leveraged by exploiting predictable collisions in the
+    underlying hashing algorithms.</p>
+
+    <p>The issue is similar to the one reported in <a href="ocert-2011-003.html">oCERT-2011-003</a>
+    and concerns the MurmurHash algorithm family. The condition for predictable collisions in the hashing functions has
+    been reported for the following language implementations:
+    <a href="http://jruby.org/">JRuby</a> (MurmurHash2),
+    <a href="http://www.ruby-lang.org/">Ruby</a> (MurmurHash2),
+    <a href="http://rubini.us/">Rubinius</a> (MurmurHash3),
+    <a href="http://www.oracle.com/technetwork/java/javase">Oracle JDK</a> (MurmurHash),
+    <a href="http://openjdk.java.net">OpenJDK</a> (MurmurHash).
+    In the case of Java OpenJDK the hash function affected by the reported
+    issue is not enabled by default, the default function is however reported vulnerable to
+    <a href="ocert-2011-003.html">oCERT-2011-003</a>.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.ruby-lang.org/">Ruby</a> &lt; 1.9.3-p327</p>
+    <p><a href="http://jruby.org/">JRuby</a> &lt; 1.7.1</p>
+    <p><a href="http://rubini.us/">Rubinius</a>, all versions</p>
+    <p><a href="http://www.oracle.com/technetwork/java/javase">Oracle JDK</a> &lt;= 7</p>
+    <p><a href="http://openjdk.java.net">OpenJDK</a> &lt;= 7</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.ruby-lang.org/">Ruby</a> &gt;= 1.9.3-p327</p>
+    <p><a href="http://jruby.org/">JRuby</a> &gt;= 1.7.1</p>
+    <p><a href="http://rubini.us/">Rubinius</a>, N/A (see References for patch commited to development branch)</p>
+    <p><a href="http://www.oracle.com/technetwork/java/javase">Oracle JDK</a>, N/A</p>
+    <p><a href="http://openjdk.java.net">OpenJDK</a>, N/A</p>
+
+    <p><b>Credit</b>: vulnerability report received from Jean-Philippe Aumasson &lt;jeanphilippe.aumasson AT gmail.com&gt;,
+    PoC code and SipHash implementation used to patch the issue developed by Martin Bosslet &lt;martin.bosslet AT gmail.com&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5370">CVE-2012-5370</a> (JRuby),
+                   <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5371">CVE-2012-5371</a> (Ruby),
+                   <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5372">CVE-2012-5372</a> (Rubinius),
+                   <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5373">CVE-2012-5373</a> (Oracle JDK, OpenJDK)</p>
+
+    <b>Timeline</b>:
+
+    <p>2012-08-30: vulnerability report sent to Ruby, JRuby and Rubinius security contacts<br/>
+    2012-09-03: vulnerability report forwarded to oCERT by Hiroshi Nakamura (Ruby security contact)<br/>
+    2012-09-06: oCERT contacted reporters to investigate additional affected projects<br/>
+    2012-09-06: reporters indicate OpenJDK as vulnerable and that Java security team has been contacted on 2012-07-31<br/>
+    2012-09-10: oCERT requested CVE assignment for Ruby, JRuby and Rubinius<br/>
+    2012-09-12: Oracle JDK and OpenJDK confirmed vulnerable by reporters<br/>
+    2012-09-12: oCERT requested CVE assignment for Oracle JDK and OpenJDK<br/>
+    2012-10-10: reporters indicate public PoC release on 2012-11-07 at <a href="http://2012.appsec-forum.ch">ASFWS</a><br/>
+    2012-11-08: assigned CVEs<br/>
+    2012-11-09: Ruby 1.9.3-p327 released<br/>
+    2012-11-23: advisory release<br/>
+    2012-11-27: corrected typos in CVE assignment<br/>
+    2012-12-03: JRuby 1.7.1 released<br/>
+    2012-12-12: added reference to JRuby release and Rubinius development branch patch<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="https://www.131002.net/siphash">https://www.131002.net/siphash</a><br/>
+    <a href="https://github.com/rubinius/rubinius/commit/a9a40fc6a1256bcf6382631b710430105c5dd868">https://github.com/rubinius/rubinius/commit/a9a40fc6a1256bcf6382631b710430105c5dd868</a></p>
+</div>
+</body>
+</html>

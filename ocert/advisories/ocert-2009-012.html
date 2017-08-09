@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2009-012 libtiff tools integer overflows</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The <a href="http://www.libtiff.org">libtiff</a> image library tools
+    suffer from integer overflows which may lead to a potentially exploitable heap
+    overflow and result in arbitrary code execution.</p>
+
+    <p>The libtiff package ships a library, for reading and writing TIFF, as
+    well as a small collection of tools for manipulating TIFF images. The
+    cvt_whole_image function used in the tiff2rgba tool and the tiffcvt function
+    used in the rgb2ycbcr tool do not properly validate the width and height of the
+    image. Specific TIFF images with large width and height can be crafted to
+    trigger the vulnerability.</p>
+
+    <p>A <a href="https://bugzilla.redhat.com/attachment.cgi?id=351312">patch</a> has been
+    made available by the maintainer and further improved by Tom Lane of Red Hat.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.libtiff.org">libtiff</a> &lt;= 3.8.2, &lt;= 3.9 (stable), &lt;= 4.0 (development)</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.libtiff.org">libtiff</a> &gt;= 3.9.4 (stable), &gt;= 4.0.0beta6 (development)</p>
+
+    <p><b>Credit</b>: vulnerability report and PoC code received from Tielei Wang &lt;wangtielei [at] icst [dot] pku [dot] edu [dot] cn&gt;, ICST-ERCIS.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2347">CVE-2009-2347</a>
+    </p>
+
+    <b>Timeline</b>:
+
+    <p>
+2009-05-22: vulnerability report received<br/>
+2009-05-22: contacted libtiff maintainer<br/>
+2009-06-30: report resent to maintainer due to lack of response<br/>
+2009-07-01: maintainer provides patch<br/>
+2009-07-04: reporter confirm fixes<br/>
+2009-07-04: oCERT requests one week embargo for vendor notification<br/>
+2009-07-04: maintainer confirms embargo<br/>
+2009-07-07: contacted affected vendors<br/>
+2009-07-07: assigned CVE<br/>
+2009-07-07: improved patch contributed by Tom Lane of Red Hat<br/>
+2009-07-04: reporter acknowledges patch<br/>
+2009-07-13: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="https://bugzilla.redhat.com/attachment.cgi?id=351312">https://bugzilla.redhat.com/attachment.cgi?id=35132</a><br/>
+    <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-2347">https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-2347</a><br/>
+    </p>
+</div>
+</body>
+</html>

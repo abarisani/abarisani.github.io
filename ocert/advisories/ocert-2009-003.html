@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2009-003 LittleCMS integer errors</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>LittleCMS, an open source color management engine, suffers from several
+    integer errors, resulting in stack based buffer overflows and various heap
+    errors as well as dangerous memory leaks. Decoding a specially crafted image
+    file will result in unexpected process termination, Denial Of Service
+    conditions or arbitrary code execution due to stack overflow.</p>
+
+    <p>LittleCMS is used by several Open Source projects including OpenJDK,
+    Firefox and GIMP.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.littlecms.com">LittleCMS</a> &lt;= 1.17</p>
+
+    <p>The following packages were identified as affected as they statically
+    include LittleCMS in their own packages.</p>
+
+    <p><a href="http://openjdk.java.net">OpenJDK</a> &lt;= 7 build b48</p>
+
+    <p><a href="http://foo2zjs.rkkda.com">foo2zjs</a>, N/A</p>
+
+    <p><a href="http://www.libmng.com">libmng</a> zip archives &lt;= 01009x</p>
+
+    <p><a href="http://www.mozilla.com/firefox">Firefox</a> &lt;= 3.1 beta 2</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.littlecms.com">LittleCMS</a> &gt;= 1.18 beta 2</p>
+
+    <p><a href="http://openjdk.java.net">OpenJDK</a>, N/A</p>
+
+    <p><a href="http://foo2zjs.rkkda.com">foo2zjs</a>, N/A</p>
+
+    <p><a href="http://www.libmng.com">libmng</a> zip archives &gt;= 01010x</p>
+
+    <p><a href="http://www.mozilla.com/firefox">Firefox</a>, N/A</p>
+
+    <p><b>Credit</b>: vulnerability report received from Chris Evans
+    &lt;cevans [at] google [dot] com&gt;, Google Security Team.
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0723">CVE-2009-0723</a> (integer overflows),
+    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0581">CVE-2009-0581</a> (memory leak),
+    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0733">CVE-2009-0733</a> (lack of upper-ground checks on size)</p>
+
+    <b>Timeline</b>:
+
+    <p>
+    2009-02-13: vulnerability report and patch received<br/>
+    2009-02-16: contacted littlecms maintainer<br/>
+    2009-02-16: oCERT investigated for other potential affected projects<br/>
+    2009-02-20: maintainer provides updated patch<br/>
+    2009-02-20: reporter provides new patch fixing memory leak<br/>
+    2009-02-21: maintainer provides fixed beta version<br/>
+    2009-02-23: reporter confirms fixes<br/>
+    2009-02-24: contacted affected vendors providing combined security patch and beta version, recommending the latter<br/>
+    2009-03-02: patch found to break functionality, contacted affected vendors advising to use only beta version<br/>
+    2009-03-03: reporter provides additional patch based on feedback, patch provided to vendors<br/>
+    2009-03-06: Debian requests embargo lift<br/>
+    2009-03-08: embargo lifted from 03-09 to 03-19, affected vendors notified<br/>
+    2009-03-20: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://scarybeastsecurity.blogspot.com/2009/03/littlecms-vulnerabilities.html">http://scarybeastsecurity.blogspot.com/2009/03/littlecms-vulnerabilities.html</a><br/>
+    <a href="http://scary.beasts.org/security/CESA-2009-003.html">http://scary.beasts.org/security/CESA-2009-003.html</a><br/>
+    </p>
+</div>
+</body>
+</html>

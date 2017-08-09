@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2015-008 FreeRADIUS insufficent CRL application</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The <a href="http://freeradius.org">FreeRADIUS</a> server
+    is an open source project that provides a RADIUS implementation.</p>
+
+    <p>The FreeRADIUS server relies on OpenSSL to perform certificate
+    validation, including Certificate Revocation List (CRL) checks. The FreeRADIUS
+    usage of OpenSSL, in CRL application, limits the checks to leaf certificates,
+    therefore not detecting revocation of intermediate CA certificates.</p>
+
+    <p>An unexpired client certificate, issued by an intermediate CA with a
+    revoked certificate, is therefore accepted by FreeRADIUS.</p>
+
+    <p>Specifically sets the X509_V_FLAG_CRL_CHECK flag for leaf certificate
+    CRL checks, but does not use X509_V_FLAG_CRL_CHECK_ALL for CRL checks on the
+    complete trust chain.</p>
+
+    <p>The FreeRADIUS project advises that the recommended configuration is to use
+    self-signed CAs for all EAP-TLS methods.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://freeradius.org">FreeRADIUS</a> &lt;= 2.2.7, &lt;= 3.0.8</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://freeradius.org">FreeRADIUS</a> &gt;= 2.2.8, &gt;= 3.0.9</p>
+
+    <p><b>Credit</b>: vulnerability anonymously reported.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4680">CVE-2015-4680</a></p>
+
+    <b>Timeline</b>:
+
+    <p>
+    2015-06-17: vulnerability report received<br/>
+    2015-06-18: contacted FreeRADIUS security maintainer<br/>
+    2015-06-18: patch provided by maintainer<br/>
+    2015-06-19: assigned CVE<br/>
+    2015-06-22: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="https://github.com/FreeRADIUS/freeradius-server/blob/b28326004379260ca2fe7b8884f813d90a741197/src/main/tls.c#L2111">https://github.com/FreeRADIUS/freeradius-server/blob/b28326004379260ca2fe7b8884f813d90a741197/src/main/tls.c#L2111</a><br/>
+    <a href="https://github.com/FreeRADIUS/freeradius-server/blob/b28326004379260ca2fe7b8884f813d90a741197/src/main/tls.c#L2595">https://github.com/FreeRADIUS/freeradius-server/blob/b28326004379260ca2fe7b8884f813d90a741197/src/main/tls.c#L2595</a><br/>
+    <a href="http://freeradius.org/security.html">http://freeradius.org/security.html</a></p>
+</div>
+</body>
+</html>

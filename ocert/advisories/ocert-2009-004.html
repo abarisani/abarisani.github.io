@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2009-004 AjaxTerm session id collision</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p><a href="http://antony.lesuisse.org/qweb/trac/wiki/AjaxTerm">AjaxTerm</a>,
+    an open source web based terminal, uses a form of random session id generation which
+    can lead to remote session hijacking.</p>
+
+    <p>The ajaxterm.js script allocates session ids on the client side using
+    the following method:</p>
+
+    <pre class="code">var sid=""+Math.round(Math.random()*1000000000);</pre>
+
+    <p>The javascript random function used in combination with round does not
+    provide sufficient entropy for a unique session id, as the session id is the
+    only unique identifier for the user session it is possible for an attacker to
+    brute force the space of possible id values and attach an existing connection.</p>
+
+    <p>This vulnerability also allows Denial Of Service attacks as it is
+    possible to exhaust the available session ids when performing a brute force
+    attack and, depending on the configured AjaxTerm child command, system resources.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://antony.lesuisse.org/qweb/trac/wiki/AjaxTerm">AjaxTerm</a> &lt;= 0.10</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p>Unfortunately oCERT has been unable to get feedback from AjaxTerm
+    maintainers and the package seems unmaintained, it's therefore suggested to
+    avoid AjaxTerm usage on production or any environment where strong security is
+    needed.</p>
+
+    <p><b>Credit</b>: initial vulnerability report provided by
+                      Michael Greb &lt;mgreb [at] linode [dot] com&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1629">CVE-2009-1629</a>
+    </p>
+
+    <b>Timeline</b>:
+
+    <p>2009-03-12: vulnerability report received<br/>
+    2009-03-12: contacted AjaxTerm maintainer<br/>
+    2009-04-18: oCERT contacts various vendors security team seeking for developers familiar with AjaxTerm<br/>
+    2009-04-28: due to lack of feedback oCERT asks reporter to disclose the issue<br/>
+    2009-04-29: reporter agrees to disclosure<br/>
+    2009-05-11: advisory release<br/>
+    2009-05-14: assigned CVE</p>
+
+    <p><b>References</b>:<br/>
+    </p>
+
+    <p><b>Permalink</b>:<br/>
+    <a href="http://www.ocert.org/advisories/ocert-2009-004.html">http://www.ocert.org/advisories/ocert-2009-004.html</a></p>
+</div>
+</body>
+</html>

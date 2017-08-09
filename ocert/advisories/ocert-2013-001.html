@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2013-001 File Roller path sanitization errors</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The File Roller archive manager for the GNOME desktop suffers from a
+    path traversal vulnerability caused by insufficient path sanitization.</p>
+
+    <p>A specially crafted archive file can be used to trigger creation of
+    arbitrary files in any location, writable by the user executing the extraction,
+    outside the current working directory. This behaviour is triggered when the
+    option 'Keep directory structure' is selected from the application 'Extract'
+    dialog.</p>
+
+    <p>The issue is present on File Roller installations which have been
+    compiled with libarchive support, used to handle tar, cpio, lha, 7zip, ar
+    archiving formats and ISO images. The libarchive support is enabled by
+    default.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://fileroller.sourceforge.net">File Roller</a> &gt;= 3.6.0, &gt;= 3.8.0, &gt;= 3.9.1</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://fileroller.sourceforge.net">File Roller</a> &gt;= 3.6.4, &gt;= 3.8.3, &gt;= 3.9.3</p>
+
+    <p><b>Credit</b>: vulnerability report received from Yorick Koster &lt;yorick.koster AT securify.nl&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4668">CVE-2013-4668</a></p>
+
+    <b>Timeline</b>:
+
+    <p>2013-05-16: vulnerability report received<br/>
+    2013-05-20: contacted File Roller maintainer<br/>
+    2013-05-27: maintainer provides patch for review<br/>
+    2013-05-28: reporter confirms patch effectiveness<br/>
+    2013-06-11: oCERT confirms patch effectiveness<br/>
+    2013-06-17: File Roller 3.9.3 released<br/>
+    2013-07-02: File Roller 3.6.4, 3.8.3 released<br/>
+    2013-07-04: contacted affected vendors<br/>
+    2013-07-04: assigned CVE<br/>
+    2013-07-08: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://fileroller.sourceforge.net">http://fileroller.sourceforge.net</a><br/>
+    <a href="http://git.gnome.org/browse/file-roller">http://git.gnome.org/browse/file-roller</a><br/>
+    <a href="https://git.gnome.org/browse/file-roller/commit/?id=b147281293a8307808475e102a14857055f81631">https://git.gnome.org/browse/file-roller/commit/?id=b147281293a8307808475e102a14857055f81631</a></p>
+</div>
+</body>
+</html>

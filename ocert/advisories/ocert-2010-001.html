@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2010-001 multiple http client unexpected download filename</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The <a href="http://lftp.yar.ru">lftp</a>, <a href="http://www.gnu.org/software/wget">wget</a>
+    and <a href="http://search.cpan.org/dist/libwww-perl/bin/lwp-download">lwp-download</a>
+    applications are FTP/HTTP clients and file transfer tools supporting
+    various network protocols. The lwp-download script is shipped along
+    with the <a href="http://search.cpan.org/dist/libwww-perl">libwww-perl</a>
+    library.</p>
+
+    <p>Unsafe behaviours have been found in lftp and lwp-download handling
+    the Content-Disposition header in conjunction with the 'suggested
+    filename' functionality.</p>
+
+    <p>Additionally, unsafe behaviours have been found in wget and
+    lwp-download in the case of HTTP 3xx redirections during file
+    downloading. The two applications automatically use the URL's filename
+    portion specified in the Location header.</p>
+
+    <p>Implicitly trusting the suggested filenames results in a saved file
+    that differs from the expected one according to the URL specified by
+    the user. This can be used by an attacker-controlled server to silently
+    write hidden and/or initialization files under the user's current
+    directory (e.g. .login, .bashrc).</p>
+
+    <p>The impact of this vulnerability is increased in the case of
+    lftp/lftpget as the default configuration allows file to be overwritten
+    without prompting the user for confirmation. In the case of lftp the
+    get1 command is affected. This command can be invoked directly by the
+    user from lftp's command line interface or indirectly by using the
+    lftpget script, packaged within the lftp distribution.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://lftp.yar.ru">lftp</a> &lt;= 4.0.5</p>
+
+    <p><a href="http://www.gnu.org/software/wget">wget</a> &lt;= 1.12</p>
+
+    <p><a href="http://search.cpan.org/dist/libwww-perl">libwww-perl</a> &lt;= 5.834</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://lftp.yar.ru">lftp</a> &gt;= 4.0.6</p>
+
+    <p><a href="http://www.gnu.org/software/wget">wget</a> N/A</p>
+
+    <p><a href="http://search.cpan.org/dist/libwww-perl">libwww-perl</a> &gt;= 5.835</p>
+
+
+    <p><b>Credit</b>: vulnerability discovered and reported by Hank
+    Leininger and Solar Designer under the Openwall Project, with further
+    analysis by Daniele Bianco of oCERT.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2251">CVE-2010-2251</a> (lftp), <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2252">CVE-2010-2252</a> (wget), <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2253">CVE-2010-2253</a> (libwww-perl)
+    </p>
+
+    <b>Timeline</b>:
+
+    <p>2009-10-23: vulnerability report received<br/>
+    2010-01-08: further investigations and analysis completed<br/>
+    2010-01-10: contacted wget, libwww-perl and lftp maintainers<br/>
+    2010-01-11: wget didn't acknowledge the report, the issues reported
+                have not been considered relevant from a security
+                perspective by the maintainer<br/>
+    2010-01-21: lftp acknowledged the report, preliminary analysis for the
+                reported issues provided<br/>
+    2010-02-06: wget confirmed the application will not be fixed<br/>
+    2010-02-08: libwww-perl acknowledged the report, preliminary analysis
+                for the reported issues provided<br/>
+    2010-03-25: lftp 4.0.6 released<br/>
+    2010-05-05: libwww-perl-5.836 released<br/>
+    2010-05-10: contacted affected vendors<br/>
+    2010-05-14: failure reported during notification process of vendor-sec
+                list, notification re-sent<br/>
+    2010-05-17: advisory published<br/>
+    2010-06-09: assigned CVE<br/>
+    </p>
+</div>
+</body>
+</html>

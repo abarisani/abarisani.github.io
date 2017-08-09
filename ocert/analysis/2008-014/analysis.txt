@@ -1,0 +1,42 @@
+WordNet-3.0 Audit
+
+-----------------------------------------------------------
+User controlled stack overflows of various char x[WORDBUF];
+-----------------------------------------------------------
+
+Abuseable on the cli:
+
+wn "$(ruby -e 'print "x" * 257')"
+
+Abuseable via the char * of the following library entry points:
+
+morph.c:morphstr(char *origstr, int pos)
+morph.c:morphword(char *word, int pos)
+
+search.c:getindex(char *searchstr, int dbase)
+
+---------------------------------------------------
+User controlled stack overflows via the environment
+---------------------------------------------------
+
+WNSEARCHDIR and WNHOME
+
+Used within the library code, so abuseable via anything calling
+morph.c:morph_init()
+
+WNDBVERSION
+
+Abuseable via anything calling wnutil.c:wninit()
+
+---------------------------------------------------------
+User controllable stack and heap overflows via data files
+---------------------------------------------------------
+
+Data file search paths are controllable via the environment, allowing a user to
+have WordNet load a modified database.
+
+binsrch.c:bin_search(char *searchkey, FILE *fp)
+binsrch.c:bin_search_key(char *searchkey, FILE *fp)
+
+search.c:parse_index(long offset, int dbase, char *line)
+

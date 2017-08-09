@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2008-013 MPlayer Real demuxer heap overflow</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The <a href="http://www.mplayerhq.hu">MPlayer</a> multimedia player suffers from
+    a vulnerability which could result in arbitrary code execution and at the least, in unexpected
+    process termination.</p>
+
+    <p>Three integer underflows located in the Real demuxer code can be used to
+    exploit a heap overflow, a specific video file can be crafted in order to make
+    the stream_read function reading or writing arbitrary amounts of memory.</p>
+
+    <p>The following patch fixes the issues:
+    <a href="../patches/2008-013/mplayer_demux_real.patch">mplayer_demux_real.patch</a>.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.mplayerhq.hu">MPlayer</a> &lt;= 1.0_rc2</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.mplayerhq.hu">MPlayer</a> &gt= 1.0_rc3</p>
+
+    <p><b>Credit</b>: vulnerability report and PoC code received from Felipe Andres Manzano
+    &lt;fmanzano [at] fceia [dot] unr [dot] edu [dot] ar&gt;. We would like to thank Reimar D&ouml;ffinger
+    from the MPlayer team for patching the issue.
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3827">CVE-2008-3827</a></p>
+
+    <b>Timeline</b>:
+
+    <p>2008-08-12: vulnerability report received<br/>
+    2008-08-24: contacted mplayer maintainers<br/>
+    2008-08-25: maintainer provides patch<br/>
+    2008-08-28: reporter indicates that the patch is incomplete and sends new PoC<br/>
+    2008-09-15: maintainer provides updated patch<br/>
+    2008-09-16: reporter confirms patch<br/>
+    2008-09-29: advisory release<br/>
+    2008-09-30: corrected credit section<br/>
+    2008-09-30: added reference to publicly commited patch and PoC</p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://svn.mplayerhq.hu/mplayer/trunk/libmpdemux/demux_real.c?r1=27314&amp;r2=27675">http://svn.mplayerhq.hu/mplayer/trunk/libmpdemux/demux_real.c?r1=27314&amp;r2=27675</a>
+    <br/>
+    <a href="http://felipe.andres.manzano.googlepages.com/OCERT-2008-013Mplayer.tgz">http://felipe.andres.manzano.googlepages.com/OCERT-2008-013Mplayer.tgz</a></p>
+</div>
+</body>
+</html>

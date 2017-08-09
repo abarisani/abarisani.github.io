@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2009-015 KDE multiple issues</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p><a href="http://kde.org">KDE</a>, an open source desktop environment,
+    suffers from several bugs that pose a security risk.</p>
+
+    <p>The oCERT team was contacted by Portcullis Security requesting help in
+    handling a series of issues reported to the KDE project back in July 2007.
+    Because of an extended period of non-disclosure Portcullis decided to resubmit
+    the issues to KDE and contacted oCERT asking for assistance in disclosure
+    coordination.</p>
+
+    <p>Ark input sanitization errors:<br/>
+    The KDE archiving tool, Ark, performs insufficient validation which leads
+    to specially crafted archive files, using unknown MIME types, to be rendered
+    using a KHTML instance, this can trigger uncontrolled XMLHTTPRequests to remote
+    sites.</p>
+
+    <p>IO Slaves input sanitization errors:<br/>
+    KDE protocol handlers perform insufficient input validation, an attacker
+    can craft malicious URI that would trigger JavaScript execution. Additionally
+    the 'help://' protocol handler suffer from directory traversal. It should be
+    noted that the scope of this issue is limited as the malicious URIs cannot be
+    embedded in Internet hosted content.
+
+    <p>KMail input sanitization errors:<br/>
+    The KDE mail client, KMail, performs insufficient validation which leads to
+    specially crafted email attachments, using unknown MIME types, to be rendered
+    using a KHTML instance, this can trigger uncontrolled XMLHTTPRequests to remote
+    sites.</p>
+
+    <p>The exploitation of these vulnerabilities is unlikely according to
+    Portcullis and KDE but the execution of active content is nonetheless
+    unexpected and might pose a threat.</p>
+
+    <p>All the reported issues have been patched.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://kde.org">KDE</a> &lt;= 4.3.2</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://kde.org">KDE</a> &gt;= 4.3.3</p>
+
+    <p><b>Credit</b>: Tim Brown, Portcullis Computer Security Ltd.</p>
+
+    <p><b>CVE</b>: N/A</p>
+
+    <b>Timeline</b>:
+
+    <p>2009-02-18: vulnerability report received<br/>
+2009-02-19: contacted KDE security team<br/>
+2009-03-05: KDE acknowledges the report, provides preliminary analysis for the reported issues<br/>
+2009-03-18: Portcullis provides additional information<br/>
+2009-04-29: KDE provides preliminary patches<br/>
+2009-05-27: KDE reports that they are communicating directly with Portcullis on the reported issues<br/>
+2009-06-15: Portcullis provides updated advisories for review<br/>
+2009-06-18: oCERT asks KDE review of Portcullis advisories<br/>
+2009-09-23: KDE reports that all issues have been fixed<br/>
+2009-10-02: KDE reports additional feedback about the fixes<br/>
+2009-10-15: KDE commits all outstanding fixes<br/>
+2009-10-27: advisory release<br/>
+2009-10-28: typo fix in affected version section<br/>
+2009-11-11: references update</p>
+
+    <p><b>References</b>:<br/>
+    <a href="ftp://ftp.kde.org/pub/kde/security_patches/xmlhttprequest_3.x.diff">ftp://ftp.kde.org/pub/kde/security_patches/xmlhttprequest_3.x.diff</a><br/>
+    <a href="http://websvn.kde.org/?view=revision&revision=1035539">http://websvn.kde.org/?view=revision&revision=1035539</a><br/>
+    <a href="http://websvn.kde.org/?view=revision&revision=1030579">http://websvn.kde.org/?view=revision&revision=1030579</a><br/>
+    <a href="http://websvn.kde.org/?view=revision&revision=938003">http://websvn.kde.org/?view=revision&revision=938003</a><br/>
+    <a href="http://www.kde.org/info/security/advisory-20091027-1.txt">http://www.kde.org/info/security/advisory-20091027-1.txt</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2014-010 SoX input sanitization errors</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The <a href="http://sox.sourceforge.net">SoX</a> project is an
+    open source tool for sound processing.</p>
+
+    <p>The sox command line tool is affected by two heap-based buffer
+    overflows, respectively located in functions start_read() and
+    AdpcmReadBlock().</p>
+
+    <p>A specially crafted wav file can be used to trigger the vulnerabilities.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://sox.sourceforge.net">SoX</a> &lt;= 14.4.1</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://sox.sourceforge.net">SoX</a> &gt; 14.4.1</p>
+
+    <p><b>Credit</b>: vulnerability report from Michele Spagnuolo of Google Security Team
+    &lt;mikispag AT google.com&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8145">CVE-2014-8145</a></p>
+
+    <b>Timeline</b>:
+
+    <p>2014-11-20: vulnerability report received<br/>
+    2014-12-02: contacted maintainer<br/>
+    2014-12-13: patch provided by maintainer<br/>
+    2014-12-14: reporter confirms patch<br/>
+    2014-12-15: contacted affected vendors<br/>
+    2014-12-18: assigned CVE<br/>
+    2014-12-22: advisory release<br/>
+    2014-12-29: updated references<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://sox.sourceforge.net">http://sox.sourceforge.net</a><br/>
+    <a href="https://www.debian.org/security/2014/dsa-3112">https://www.debian.org/security/2014/dsa-3112</a><br/>
+    </p>
+</div>
+</body>
+</html>

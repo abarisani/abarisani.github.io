@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2009-016 Poppler, xpdf integer overflow during heap allocation</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>
+    Poppler and Xpdf are two popular open source projects for processing PDF
+    files.  Both projects are vulnerable to an integer overflow during heap
+    memory allocation when processing a PDF file.  In general, this results
+    in unexpected process termination.  If an application using this code is
+    multi-threaded (or uses a crash signal handler), it may be possible to
+    execute arbitrary code.
+    </p>
+
+    <p>
+The vulnerability resides in the object stream handler.  In particular,
+a multiplicative overflow occurs when a large number of embedded objects
+are specified.  An overflow check was in place in the code, but it only
+protected related calls to gmalloc().  The C++ object array allocation
+code (new[]) is not guarded by the upper bound check and the call to
+new[] <a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=19351">does not
+result in an exception with gcc</a>.  This results in bytes being written after the
+valid heap allocation during object construction.
+
+  This results in bytes being written
+    after the valid heap allocation during object construction.
+    </p>
+
+    <p>
+    Both software packages have released fixed versions which limit the allowed
+    object count to a domain specific value.
+    </p>
+
+    <p>A <a href="http://sites.google.com/site/em386cr/Home/CVE-2009-3608-explained.txt
+">detailed analysis</a> has been made available by the reporter.
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://poppler.freedesktop.org">Poppler</a> &lt; 0.12.1</p>
+    <p><a href="http:/www.foolabs.com/xpdf">Xpdf</a> &lt; 3.02pl4</p.
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://poppler.freedesktop.org">Poppler</a> &gt;= 0.12.1</p>
+    <p><a href="http:/www.foolabs.com/xpdf">Xpdf</a> &gt;= 3.02pl4</p>
+
+    <p><b>Credit</b>: vulnerability report and proof-of-concept received from
+                      Chris Rohlf &lt;chris.rohlf AT gmail.com&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3608">CVE-2009-3608</a>
+    </p>
+
+    <b>Timeline</b>:
+
+    <p>
+2009-09-04: vulnerability report received<br/>
+2009-09-17: proof of concept received from reporter<br/>
+2009-09-21: impact reviewed<br/>
+2009-09-29: contacted poppler maintainer<br/>
+2009-09-29: vendor-sec notified<br/>
+2009-09-30: vendor-sec discussion expanded to include xpdf maintainer<br/>
+2009-10-02: final fix agreed upon by both maintainers<br/>
+2009-10-12: CVE assigned by Tomas Hoger of RedHat<br/>
+2009-10-14: fixed Xpdf released<br/>
+2009-10-18: fixed Poppler released<br/>
+2009-10-21: advisory published<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://chargen.matasano.com/chargen/2009/10/9/a-c-challenge.html">Related Matasano C++ challenge</a><br/>
+    <a href="http://chargen.matasano.com/chargen/2009/10/15/a-c-challenge-the-conclusion.html">Related Matasano C++ challenge conclusion</a><br/>
+    <a href="http://www.foolabs.com/xpdf/CHANGES">Xpdf CHANGES</a><br/>
+    </p>
+</div>
+</body>
+</html>

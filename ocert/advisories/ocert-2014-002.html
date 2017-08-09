@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2014-002 Xalan-Java insufficient secure processing</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The <a href="http://xml.apache.org/xalan-j">Xalan-Java</a> library is a
+    popular XSLT processor from the Apache Software Foundation.</p>
+
+    <p>The library implements the Java API for XML Processing (JAXP) which
+    supports a secure processing feature for interpretive and XSLCT processors. The
+    intent of this feature is to limit XSLT/XML processing behaviours to "make the
+    XSLT processor behave in a secure fashion".<p>
+
+    <p>It has been discovered that the secure processing features suffers from
+    several limitations that undermine its purpose. The enabling of the secure
+    processing feature in fact still allows the following processing to take place:</p>
+
+    <ul>
+      <li>Java properties, bound to XSLT 1.0 system-property(), are accessible.</li>
+
+      <li>output properties that allow to load arbitrary classes or resources are allowed (XALANJ-2435).</li>
+
+      <li>arbitrary code can be executed if the Bean Scripting Framework (BSF)
+      is in the classpath, as it allows to spawn available JARs with secure processing
+      disabled, effectively bypassing the intended protection.</li>
+    </ul>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://xml.apache.org/xalan-j">Xalan-Java</a> &gt;= 2.7.0</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://xml.apache.org/xalan-j">Xalan-Java</a> &gt;= r1581058 (see references)</p>
+
+    <p><b>Credit</b>: vulnerability report received from Nicolas Gregoire &lt;nicolas.gregoire AT agarri.fr&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0107">CVE-2014-0107</a></p>
+
+    <b>Timeline</b>:
+
+    <p>2014-02-05: vulnerability report received<br/>
+    2014-02-05: reporter provides disclosure date set to 2014-03-21<br/>
+    2014-02-06: contacted Apache Security Team<br/>
+    2014-03-17: maintainer provides patch for review<br/>
+    2014-03-17: reporter confirms patch<br/>
+    2014-03-21: assigned CVE<br/>
+    2014-03-24: maintainer commits patch</br>
+    2014-03-24: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://xml.apache.org/xalan-j">http://xml.apache.org/xalan-j</a><br/>
+    <a href="https://issues.apache.org/jira/browse/XALANJ-2435">https://issues.apache.org/jira/browse/XALANJ-2435</a><br/>
+    <a href="http://svn.apache.org/viewvc?view=revision&revision=1581058">http://svn.apache.org/viewvc?view=revision&revision=1581058</a>
+    </p>
+</div>
+</body>
+</html>

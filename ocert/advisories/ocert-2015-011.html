@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2015-011 PyAMF input sanitization errors (XXE)</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p><a href="https://github.com/hydralabs/pyamf/">PyAMF</a> is a Python
+    module that implements the Action Message Format (AMF) protocol,
+    allowing Flash interoperation with various web frameworks.</p>
+    <p>PyAMF suffers from insufficient AMF input payload sanitization which
+    results in the XML parser not preventing the processing of XML external
+    entities (XXE).</p>
+
+    <p>A specially crafted AMF payload, containing malicious references to
+    XML external entities, can be used to trigger Denial of Service (DoS)
+    conditions or arbitrarily return the contents of files that are
+    accessible with the running application privileges.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="https://github.com/hydralabs/pyamf">PyAMF</a> &lt;= 0.7.2</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="https://github.com/hydralabs/pyamf">PyAMF</a> &gt;= 0.8.0</p>
+
+    <p><b>Credit</b>: vulnerability reported by Nicolas Grégoire &lt;nicolas [dot] gregoire [at] agarri [dot] fr&gt;.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8549">CVE-2015-8549</a></p>
+
+    <b>Timeline</b>:
+
+    <p>
+    2015-12-01: vulnerability report received<br/>
+    2015-12-02: contacted maintainer<br/>
+    2015-12-04: maintainer commits patch via public pull request<br/>
+    2015-12-12: reporter confirms patch<br/>
+    2015-12-14: contacted affected vendors<br/>
+    2015-12-14: assigned CVE<br/>
+    2015-12-17: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+    <a href="https://github.com/hydralabs/pyamf/pull/58">https://github.com/hydralabs/pyamf/pull/58</a></p>
+</div>
+</body>
+</html>

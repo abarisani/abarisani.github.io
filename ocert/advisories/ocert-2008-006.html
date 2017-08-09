@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2008-006 multiple SNMP implementations HMAC authentication spoofing</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>Some SNMP implementations include incomplete HMAC authentication code that
+    allows spoofing of authenticated SNMPv3 packets.</p>
+
+    <p>The authentication code reads the length to be checked from sender input, this
+    allows the sender to supply single byte HMAC code and have a 1 in 256 chance of
+    matching the correct HMAC and authenticating, as only the first byte will be
+    checked. The sender would need to know a valid username.</p>
+
+    <p>Currently <a href="http://www.net-snmp.org">Net-SNMP</a> and <a href="http://www.ece.ucdavis.edu/ucd-snmp">UCD-SNMP</a>
+    are known to be vulnerable, other SNMP implementations may also be affected.
+    The <a href="http://ecos.sourceware.org">eCos project</a> includes code derived
+    from UCD-SNMP and is therefore also affected.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.net-snmp.org">Net-SNMP</a> &lt;= 5.4.1, &lt;= 5.3.2, &lt;= 5.2.4</p>
+
+    <p><a href="http://www.ece.ucdavis.edu/ucd-snmp">UCD-SNMP</a>, all versions</p>
+
+    <p><a href="http://ecos.sourceware.org">eCos</a>, all versions</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.net-snmp.org">Net-SNMP</a> &gt;= 5.4.1.1, &gt;= 5.3.2.1, &gt;= 5.2.4.1</p>
+
+    <p><a href="http://www.ece.ucdavis.edu/ucd-snmp">UCD-SNMP</a>, N/A</p>
+
+    <p><a href="http://ecos.sourceware.org">eCos</a>, patched in CVS</p>
+
+
+    <p><b>Credit</b>: this issue was reported by <a href="http://cert.org">CERT/CC</a>, it is tracked as
+    <a href="http://www.kb.cert.org/vuls/id/878044">VU#878044</a>.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0960">CVE-2008-0960</a></p>
+
+    <b>Timeline</b>:
+
+    <p>2008-06-05: CERT/CC reports VU#878044 to oCERT requesting joint coordination<br/>
+    2008-06-05: contacted affected vendors<br/>
+    2008-06-06: added eCos to affected packages<br/>
+    2008-06-09: patched net-snmp packages are released<br/>
+    2008-06-09: advisory release<br/>
+    2008-06-11: eCos patched in CVS</p>
+
+    <p><b>References</b>:<br/>
+    <a href="http://sourceforge.net/forum/forum.php?forum_id=833770">http://sourceforge.net/forum/forum.php?forum_id=833770</a>
+    <br/>
+    <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1989089&group_id=12694&atid=456380">http://sourceforge.net/tracker/index.php?func=detail&aid=1989089&group_id=12694&atid=456380</a>
+    <br/>
+    <a href="http://www.kb.cert.org/vuls/id/878044">http://www.kb.cert.org/vuls/id/878044</a></p>
+</div>
+</body>
+</html>

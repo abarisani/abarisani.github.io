@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <b>#2008-001 GnuPG memory corruption</b>
+
+    <br /><br />
+
+    <b>Description</b>:
+
+    <p>A memory corruption bug exists in version 1.4.8 of the <a href="http://www.gnupg.org">Gnu Privacy Guard</a>,
+    the issue also affects version 2.0.8.</p>
+
+    <p>A selection of keys available from a public keyserver were found to cause
+    a segmentation fault due to pointer corruption when imported via --refresh-keys
+    or --import.</p>
+
+    <p>It is not known whether the bug can be exploited to execute arbitrary code.
+    Version 1.4.9 and 2.0.9 have been released addressing this issue.</p>
+
+    <p>We would like to thank Werner Koch (wk [at] gnupg [dot] org) for promptly handling this issue.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.gnupg.org">GnuGP</a> = 1.4.8, = 2.0.8</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.gnupg.org">GnuGP</a> &gt;= 1.4.9, &gt;= 2.0.9</p>
+
+    <p><b>Credit</b>: Andrea Barisani, oCERT Team | Inverse Path</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1530">CVE-2008-1530</a></p>
+
+    <b>Timeline</b>:
+
+    <p>2008-03-19: contacted gnupg maintainers and affected vendors<br/>
+    2008-03-25: gnupg patched in SVN<br/>
+    2008-03-26: gnupg 1.4.9, 2.0.9 released<br/>
+    2008-03-26: advisory release<br/>
+    2008-03-27: assigned CVE</p>
+
+    <p><b>References</b>:<br/>
+    <a href="https://bugs.g10code.com/gnupg/issue894">https:://bugs.g10code.com/gnupg/issue894</a></p>
+</div>
+</body>
+</html>

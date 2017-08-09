@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2009-008 Dillo integer overflow</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p><a href="http://www.dillo.org">Dillo</a>, an open source graphical web
+    browser, suffers from an integer overflow which may lead to a potentially
+    exploitable heap overflow and result in arbitrary code execution.</p>
+
+    <p>The vulnerability is triggered by HTML pages with embedded PNG images,
+    the Png_datainfo_callback function does not properly validate the width and
+    height of the image. Specific PNG images with large width and height can be
+    crafted to trigger the vulnerability.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.dillo.org">Dillo</a> &lt;= 2.1</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.dillo.org">Dillo</a> &gt;= 2.1.1</a>
+
+    <p><b>Credit</b>: vulnerability report and PoC code received from Tielei Wang &lt;wangtielei [at] icst [dot] pku [dot] edu [dot] cn&gt;, ICST-ERCIS.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2294">CVE-2009-2294</a>
+    </p>
+
+    <b>Timeline</b>:
+
+    <p>
+2009-05-21: vulnerability reported received<br/>
+2009-06-18: contacted dillo maintainer<br/>
+2009-06-18: maintainer requests PoC<br/>
+2009-06-19: PoC is supplied<br/>
+2009-06-19: maintainer provides patch<br/>
+2009-06-24: revised patch is provided after reporter feedback<br/>
+2009-06-25: patch is confirmed, maintainer requests one week of time to investigate further areas of the browser<br/>
+2009-07-01: dillo developer proposes security release coordination<br/>
+2009-07-03: advisory release<br/>
+    </p>
+</div>
+</body>
+</html>

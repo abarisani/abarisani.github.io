@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2011-002 libavcodec insufficient boundary check</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The libavcodec library, an open source video encoding/decoding library part of the
+    <a href="http://www.ffmpeg.org/">FFmpeg</a> and <a href="http://libav.org/">Libav</a> projects,
+    performs insufficient boundary check against a buffer index. The missing check can
+    result in arbitrary read/write of data outside a destination buffer boundaries.</p>
+
+    <p>The vulnerability affects the Chinese AVS video (CAVS) file format
+    decoder, specially crafted CAVS files may lead to arbitrary code execution
+    during decoding.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.ffmpeg.org/">FFmpeg</a> &lt;= 0.7.2, &lt;= 0.8.1</p>
+
+    <p><a href="http://libav.org/">Libav</a> &lt;= 0.7.1</p>
+
+    <p>The following packages were identified as affected as they statically include
+    libavcodec in their own packages.</p>
+
+    <p><a href="http://www.mplayerhq.hu/">MPlayer</a> &lt;= 1.0_rc4</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.ffmpeg.org/">FFmpeg</a> &gt;= 0.7.3, &gt;= 0.8.2</p>
+
+    <p><a href="http://libav.org/">Libav</a>, N/A</p>
+
+    <p><a href="http://www.mplayerhq.hu/">MPlayer</a>, N/A</p>
+
+    <p><b>Credit</b>: vulnerability report received from Emmanouel Kellinis.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3362">CVE-2011-3362</a>
+    </p>
+
+    <b>Timeline</b>:
+
+    <p>2011-07-14: vulnerability report received<br/>
+    2011-07-15: contacted ffmpeg maintainers<br/>
+    2011-07-15: ffmpeg maintainer confirms the issue, preliminary patch is provided<br/>
+    2011-07-21: patch approved by reporter<br/>
+    2011-07-23: contacted affected vendors<br/>
+    2011-08-10: advisory release<br/>
+    2011-09-14: assigned CVE<br/>
+    </p>
+</div>
+</body>
+</html>

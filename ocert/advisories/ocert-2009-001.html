@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2009-001 Pango integer overflow in heap allocation size calculations</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>
+      <a href="http://www.pango.org">Pango</a>
+      is a library for laying out and rendering text, with an emphasis
+      on internationalization. Pango suffers from a multiplicative integer
+      overflow which may lead to a potentially exploitable, heap overflow
+      depending on the calling conditions.  For example, this vulnerability is
+      remotely reachable in <a
+      href="http://www.mozilla.org/firefox">Firefox</a> by creating an overly
+      large document.location value but only results in a process-terminating,
+      allocation error (denial of service).
+    </p>
+
+    <p>
+      The affected function is <i>pango_glyph_string_set_size</i>.
+      An overflow check when doubling the size neglects the overflow
+      possible on the subsequent allocation:
+    </p>
+    <pre>
+  string->glyphs = g_realloc (string->glyphs, string->space *
+                              sizeof (PangoGlyphInfo));
+    </pre>
+     <p>
+       Note that other font rendering subsystems suffer from similar issues and
+       should be cross-checked by maintainers.
+     </p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://www.pango.org">Pango</a> &lt; 1.24</p>
+    <p><small>(check with your ѕpecific package maintainer for backports)</small></p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://www.pango.org">Pango</a> &gt;= 1.24</p>
+
+
+    <p><b>Credit</b>:
+        Will Drewry, oCERT Team | Google Security Team. Special thanks to Karl Tomlinson for extended analysis of the
+        impact on Firefox.
+    </p>
+
+    <p><b>CVE</b>: <a
+    href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1194">CVE-2009-1194</a>
+    </p>
+
+    <b>Timeline</b>:
+
+    <p>
+    2009-02-22: attempted to contact upstream via gtk-i18n-list AT gnome.org<br/>
+    2009-02-25: bug filed with Mozilla against firefox<br/>
+    2009-03-02: Behdad Esfahbod patched Pango upstream (for 1.24)<br/>
+    2009-04-13: vendor-sec alerted regarding backporting the silent pango fix<br/>
+    2009-04-23: embargo date and CVE assigned (thanks Josh Bressers!)<br/>
+    2009-05-07: advisory release<br/>
+    </p>
+
+    <p><b>References</b>:<br/>
+<a
+href="https://bugzilla.mozilla.org/show_bug.cgi?id=480134">https://bugzilla.mozilla.org/show_bug.cgi?id=480134</a><br/>
+    </p>
+</div>
+</body>
+</html>

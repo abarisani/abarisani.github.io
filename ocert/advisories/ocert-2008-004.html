@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oCERT archive</title>
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../styles/prism.css">
+    <link rel="stylesheet" href="../../styles/hack.css?t=1473587248287">
+    <link rel="stylesheet" href="../../styles/site.css?t=1473587248286">
+  </head>
+  <body class="hack">
+    <div class="main container">
+
+    <p><b>#2008-004 multiple speex implementations insufficient boundary checks</b></p>
+
+    <p><b>Description</b>:</p>
+
+    <p>The reference speex decoder from the <a href="http://speex.org">Speex library</a>
+    performs insufficient boundary checks on a header structure read from user input, this
+    has been reported in <a href="ocert-2008-002.html">oCERT-2008-002</a>
+    advisory.</p>
+
+    <p>Further investigation showed that several packages include similar code and
+    are therefore vulnerable.</p>
+
+    <p>In order to prevent the usage of incorrect header processing reference code,
+    the speex_packet_to_header() function has been modified to bound the returned mode
+    values in Speex &gt;= 1.2beta3.2. This change automatically fixes applications that
+    use the Speex library dynamically.</p>
+
+    <p><b>Affected version</b>:</p>
+
+    <p><a href="http://gstreamer.freedesktop.org/modules/gst-plugins-good.html">gstreamer-plugins-good</a> &lt;= 0.10.7</p>
+
+    <p><a href="http://icculus.org/SDL_sound">SDL_sound</a> &lt;= 1.0.1</p>
+
+    <p><a href="http://www.speex.org">Speex</a> &lt;= 1.1.12 (speexdec)</p>
+
+    <p><a href="http://www.metadecks.org/software/sweep">Sweep</a> &lt;= 0.9.2</p>
+
+    <p><a href="http://xiph.org">vorbis-tools</a> &lt;= 1.2.0</p>
+
+    <p><a href="http://www.videolan.org/vlc">VLC Media Player</a> &lt;= 0.8.6f</p>
+
+    <p><a href="http://xinehq.de">xine-lib</a> &lt;= 1.11.1.1</p>
+
+    <p>XMMS speex plugin</p>
+
+    <p><b>Fixed version</b>:</p>
+
+    <p><a href="http://gstreamer.freedesktop.org/modules/gst-plugins-good.html">gstreamer-plugins-good</a> &gt;= 0.10.8 (patched in CVS)</p>
+
+    <p><a href="http://icculus.org/SDL_sound">SDL_sound</a> &gt;= 1.0.2</p>
+
+    <p><a href="http://www.speex.org">Speex</a> &gt;= 1.2beta3.2 (patched in CVS)</p>
+
+    <p><a href="http://www.metadecks.org/software/sweep">Sweep</a> &gt;= 0.9.3</p>
+
+    <p><a href="http://xiph.org">vorbis-tools</a>, patched in CVS</p>
+
+    <p><a href="http://www.videolan.org/vlc">VLC Media Player</a>, patched in GIT</p>
+
+    <p><a href="http://xinehq.de">xine-lib</a> &gt;= 1.1.12</p>
+
+    <p>XMMS speex plugin, N/A</p>
+
+
+    <p><b>Credit</b>: see <a href="ocert-2008-002.html">oCERT-2008-002</a>,
+    additionally we would like to thank Tomas Hoger from the Red Hat Security Response Team for his help 
+    in investigating the issue.</p>
+
+    <p><b>CVE</b>: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1686">CVE-2008-1686</a></p>
+
+    <b>Timeline</b>:
+
+    <p>2008-04-10: investigation of oCERT-2008-002 leads to discovery of more affected packages<br/>
+    2008-04-10: Speex header processing code fixed in CVS<br/>
+    2008-04-11: contacted upstream maintainers and affected vendors<br/>
+    2008-04-11: gstreamer-plugins-good patched in CVS<br/>
+    2008-04-11: sweep 0.9.3 released<br/>
+    2008-04-11: SDL_sound patched in CVS<br/>
+    2008-04-14: vorbis-tools patched in CVS<br/>
+    2008-04-14: xine-lib 1.1.12 released<br/>
+    2008-04-17: advisory release<br/>
+    2008-04-17: SDL_sound 1.0.2 released<br/>
+    2008-04-17: VLC patched in GIT</p>
+
+    <p><b>References</b>:<br/>
+    <a href="ocert-2008-002.html">oCERT-2008-2</a>
+    <br/>
+    <a href="http://trac.xiph.org/changeset/14701">http://trac.xiph.org/changeset/14701</a>
+    <br/>
+    <a href="http://webcvs.freedesktop.org/gstreamer/gst-plugins-good/ext/speex/gstspeexdec.c?r1=1.40&r2=1.41">http://webcvs.freedesktop.org/gstreamer/gst-plugins-good/ext/speex/gstspeexdec.c?r=1.40&r2=1.41</a>
+    <br/>
+    <a href="http://trac.metadecks.org/changeset/554">http://trac.metadecks.org/changeset/554</a>
+    <br/>
+    <a href="http://svn.icculus.org/SDL_sound?view=rev&revision=537">http://svn.icculus.org/SDL_sound?view=rev&revision=537</a>
+    <br/>
+    <a href="http://svn.icculus.org/SDL_sound?view=rev&revision=538">http://svn.icculus.org/SDL_sound?view=rev&revision=538</a>
+    <br/>
+    <a href="http://trac.xiph.org/changeset/14728">http://trac.xiph.org/changeset/14728</a>
+    <br/>
+    <a href="http://hg.debian.org/hg/xine-lib/xine-lib?cmd=changeset;node=66e1654718fb;style=gitweb">http://hg.debian.org/hg/xine-lib/xine-lib?cmd=changeset;node=66e1654718fb;style=gitweb</a>
+    <br/>
+    <a href="http://trac.videolan.org/vlc/changeset/8060b3457e20e6223b70927693f8da8f547b8fef">http://trac.videolan.org/vlc/changeset/8060b3457e20e6223b70927693f8da8f547b8fef</a></p>
+</div>
+</body>
+</html>
