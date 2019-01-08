@@ -31,4 +31,9 @@ in relation to their security relevance and scenarios of application. Finally,
 conditions for a successful remote Ethernet Packet-In-Packet injection will be
 discussed and demonstrated for what is believed to be the first time in public.
 
--------------------------------------------------------------------------------
+- Update ----------------------------------------------------------------------
+
+The XMOS XC-2 Ethernet Kit, mentioned in the research, can now be replaced with
+the author's own hardware design:
+
+  https://github.com/inversepath/jobun
