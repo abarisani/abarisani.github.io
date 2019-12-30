@@ -1,12 +1,26 @@
-Authors: Andrea Barisani <andrea@inversepath.com>
-         Daniele Bianco <daniele@inversepath.com>
+Title
+=====
 
-Title:              TEMPEST inception
-First presentation: May 2014 - PXE
+TEMPEST inception
 
-Status: *incomplete/dead project*
+Authors
+=======
 
-- Information -----------------------------------------------------------------
+Andrea Barisani <andrea@inversepath.com>  
+Daniele Bianco <daniele@inversepath.com>  
+
+First presentation
+==================
+
+May 2014 - PXE
+
+Status
+======
+
+*incomplete/dead project*
+
+Information
+===========
 
 Since our original TEMPEST presentation [1] was released we always dreamed to
 take the "Inverse Path" when it comes to TEMPEST attacks.
@@ -26,5 +40,3 @@ This directory contains slides and two demo videos of our incomplete PoC,
 hereby presented for posterity.
 
 [1] https://github.com/abarisani/abarisani.github.io/tree/master/research/tempest
-
--------------------------------------------------------------------------------

@@ -1,11 +1,25 @@
-Authors: Andrea Barisani <andrea.barisani@f-secure.com>
+Title
+=====
 
-Title:              Insecure Boot
-First presentation: November 2019 - PacSec
+Insecure Boot
 
-Video: https://www.youtube.com/watch?v=QOrc7XvdPgU&t=1423s
+Authors
+=======
 
-- Abstract --------------------------------------------------------------------
+Andrea Barisani <andrea.barisani@f-secure.com>  
+
+First presentation
+==================
+
+November 2019 - PacSec
+
+Video
+=====
+
+https://www.youtube.com/watch?v=QOrc7XvdPgU&t=1423s
+
+Abstract
+========
 
 Secure Boot schemes are a fundamental security feature which enables hardware
 trust anchor necessary to achieve unattended confidentiality and integrity on
@@ -18,5 +32,3 @@ This presentation delves in real-life experiences in developing, testing and
 compromising Secure Boot schemes of all kind, aimed at proposing practices,
 techniques and frameworks to improve the security of its various
 implementations.
-
--------------------------------------------------------------------------------

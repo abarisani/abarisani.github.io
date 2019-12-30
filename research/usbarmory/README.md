@@ -1,16 +1,29 @@
-Authors: Andrea Barisani <andrea@inversepath.com>
-         Andrej Rosano   <andrej@inversepath.com>
-         Daniele Bianco <daniele@inversepath.com>
+Title
+=====
 
-Title:              Forging the USB armory
-First presentation: October 2014 - HITB
+¹ Forging the USB armory
+² USB armory reloaded
 
-Title:              USB armory reloaded
-First presentation: September 2019 - No Hat
-  
-Video: https://www.youtube.com/watch?v=bE5licRHMFs
+Authors
+=======
 
-- Abstract --------------------------------------------------------------------
+Andrea Barisani ¹ <andrea@inversepath.com>,  ² <andrea.barisani@f-secure.com>  
+Andrej Rosano   ¹ <andrej@inversepath.com>,  ² <andrej.rosano@f-secure.com>  
+Daniele Bianco  ¹ <daniele@inversepath.com>, ² <daniele.bianco@f-secure.com>  
+
+First presentation
+==================
+
+¹ October 2014 - HITB
+² September 2019 - No Hat
+
+Video
+=====
+
+https://www.youtube.com/watch?v=bE5licRHMFs
+
+Abstract
+========
 
 The availability of modern System on a Chip (SoC) parts, having low power
 consumption and high integration of most computer components in a single chip,
@@ -28,5 +41,3 @@ Leveraging on the current maturity of the project, the defensive and offensive
 uses of the USB armory are also fully explored, covering topics such as the
 INTERLOCK application, its Genode OS support and its role and usage in
 identifying new vulnerabilities affecting widely deployed USB stacks.
-
--------------------------------------------------------------------------------

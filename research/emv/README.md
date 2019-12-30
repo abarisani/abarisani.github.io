@@ -1,17 +1,30 @@
-Authors: Andrea Barisani <andrea@inversepath.com>  (2011, 2014)
-         Daniele Bianco <daniele@inversepath.com>  (2011, 2014)
-         Adam Laurie       <adam@aperturelabs.com> (2011)
-         Zac Franken        <zac@aperturelabs.com> (2011)
+Title
+=====
 
-Title:              Chip & PIN is definitely broken
-First presentation: March 2011 - CanSecWest
+¹ Chip & PIN is definitely broken  
+² Practical EMV PIN interception and fraud detection  
 
-Title:              Practical EMV PIN interception and fraud detection
-First presentation: December 2014 - 31C3
+Authors
+=======
 
-Video: https://www.youtube.com/watch?v=_Ai-3NG2UVA
+Andrea Barisani <andrea@inversepath.com>  (¹, ²)  
+Daniele Bianco <daniele@inversepath.com>  (¹, ²)  
+Adam Laurie       <adam@aperturelabs.com> (¹)  
+Zac Franken        <zac@aperturelabs.com> (¹)  
 
-- Abstract (2011) -------------------------------------------------------------
+First presentation
+==================
+
+¹ March 2011 - CanSecWest  
+² December 2014 - 31C3  
+
+Video
+=====
+
+https://www.youtube.com/watch?v=_Ai-3NG2UVA
+
+¹ Abstract
+==========
 
 The EMV global standard for electronic payments is widely used for
 inter-operation between chip equipped credit/debit cards, Point of Sales
@@ -32,7 +45,8 @@ existing protections and mode of operations.
 As usual cool gear and videos are going to be featured in order to maximize the
 presentation.
 
-- Abstract (2014) -------------------------------------------------------------
+² Abstract
+==========
 
 The EMV global standard for electronic payments is widely used for
 inter-operation between chip equipped credit/debit cards, Point of Sales
@@ -58,5 +72,3 @@ EMV fraud detection markers.
 Such information is vital to enable cardholders to request the correct and
 relevant information necessary to claim fraudulent charges and to enable
 issuers and processors to prevent fraud in the first place.
-
--------------------------------------------------------------------------------

@@ -1,14 +1,26 @@
-Authors: Andrea Barisani <andrea@inversepath.com>
-         Daniele Bianco <daniele@inversepath.com>
+Title
+=====
 
-Title: Fully arbitrary 802.3 packet injection: maximizing the Ethernet
-       attack surface
+Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface
 
-First presentation: July 2013 - Black Hat USA
+Authors
+=======
 
-Video: https://www.youtube.com/watch?v=j_sqwo1xjIA
+Andrea Barisani <andrea@inversepath.com>  
+Daniele Bianco <daniele@inversepath.com>  
 
-- Abstract --------------------------------------------------------------------
+First presentation
+==================
+
+July 2013 - Black Hat USA
+
+Video
+=====
+
+https://www.youtube.com/watch?v=j_sqwo1xjIA
+
+Abstract
+========
 
 It is generally assumed that sending and sniffing arbitrary Fast Ethernet
 packets can be performed with standard Network Interface Cards (NIC) and
@@ -31,7 +43,8 @@ in relation to their security relevance and scenarios of application. Finally,
 conditions for a successful remote Ethernet Packet-In-Packet injection will be
 discussed and demonstrated for what is believed to be the first time in public.
 
-- Update ----------------------------------------------------------------------
+Updates
+=======
 
 The XMOS XC-2 Ethernet Kit, mentioned in the research, can now be replaced with
 the author's own hardware design:
