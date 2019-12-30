@@ -14,7 +14,7 @@ Daniele Bianco  ¹ <daniele@inversepath.com>, ² <daniele.bianco@f-secure.com>
 First presentation
 ==================
 
-¹ October 2014 - HITB
+¹ October 2014 - HITB  
 ² September 2019 - No Hat
 
 Video
