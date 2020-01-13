@@ -49,4 +49,4 @@ Updates
 The XMOS XC-2 Ethernet Kit, mentioned in the research, can now be replaced with
 the author's own hardware design:
 
-  https://github.com/inversepath/jobun
+  https://github.com/f-secure-foundry/jobun
