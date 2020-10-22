@@ -17,9 +17,14 @@ First presentation
 December 2019 - 36c3
 
 Video
-=====
+-----
 
 https://www.youtube.com/watch?v=4QircrJjEtQ&t=1s
+
+Updated presentation
+====================
+
+October 2020 - GoLab
 
 Abstract
 ========
