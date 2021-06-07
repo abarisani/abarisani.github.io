@@ -26,6 +26,11 @@ Updated presentation
 
 October 2020 - GoLab
 
+Video
+-----
+
+https://www.youtube.com/watch?v=aOEl5BCfHv0
+
 Abstract
 ========
 
@@ -47,3 +52,8 @@ while maintaining the strength of Go runtime standard (and external) libraries.
 This enables the creation of HSMs, cryptocurrency stacks and many more
 applications without the requirement for complex OSes and libraries as
 dependencies.
+
+Repository
+==========
+
+https://github.com/f-secure-foundry/tamago

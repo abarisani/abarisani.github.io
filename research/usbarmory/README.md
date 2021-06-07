@@ -41,3 +41,8 @@ Leveraging on the current maturity of the project, the defensive and offensive
 uses of the USB armory are also fully explored, covering topics such as the
 INTERLOCK application, its Genode OS support and its role and usage in
 identifying new vulnerabilities affecting widely deployed USB stacks.
+
+Repository
+==========
+
+https://github.com/f-secure-foundry/usbarmory
