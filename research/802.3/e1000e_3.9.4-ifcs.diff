@@ -1,0 +1,32 @@
+diff -urN e1000e_orig/ethtool.c e1000e/ethtool.c
+--- e1000e_orig/ethtool.c	2013-06-06 10:28:25.000000000 +0200
++++ e1000e/ethtool.c	2013-06-06 10:29:39.000000000 +0200
+@@ -1189,7 +1189,6 @@
+ 		tx_desc->buffer_addr = cpu_to_le64(tx_ring->buffer_info[i].dma);
+ 		tx_desc->lower.data = cpu_to_le32(skb->len);
+ 		tx_desc->lower.data |= cpu_to_le32(E1000_TXD_CMD_EOP |
+-						   E1000_TXD_CMD_IFCS |
+ 						   E1000_TXD_CMD_RS);
+ 		tx_desc->upper.data = 0;
+ 	}
+diff -urN e1000e_orig/netdev.c e1000e/netdev.c
+--- e1000e_orig/netdev.c	2013-06-06 10:28:25.000000000 +0200
++++ e1000e/netdev.c	2013-06-06 10:31:41.000000000 +0200
+@@ -2966,7 +2966,7 @@
+ 	}
+ 
+ 	/* Setup Transmit Descriptor Settings for eop descriptor */
+-	adapter->txd_cmd = E1000_TXD_CMD_EOP | E1000_TXD_CMD_IFCS;
++	adapter->txd_cmd = E1000_TXD_CMD_EOP;
+ 
+ 	/* only set IDE if we are delaying interrupts using the timers */
+ 	if (adapter->tx_int_delay)
+@@ -5268,7 +5263,7 @@
+ 	struct e1000_adapter *adapter = tx_ring->adapter;
+ 	struct e1000_tx_desc *tx_desc = NULL;
+ 	struct e1000_buffer *buffer_info;
+-	u32 txd_upper = 0, txd_lower = E1000_TXD_CMD_IFCS;
++	u32 txd_upper = 0, txd_lower = 0;
+ 	unsigned int i;
+ 
+ 	if (tx_flags & E1000_TX_FLAGS_TSO) {
