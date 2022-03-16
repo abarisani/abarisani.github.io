@@ -45,4 +45,4 @@ identifying new vulnerabilities affecting widely deployed USB stacks.
 Repository
 ==========
 
-https://github.com/f-secure-foundry/usbarmory
+https://github.com/usbarmory/usbarmory

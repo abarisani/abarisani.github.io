@@ -56,4 +56,4 @@ dependencies.
 Repository
 ==========
 
-https://github.com/f-secure-foundry/tamago
+https://github.com/usbarmory/tamago
