@@ -7,9 +7,9 @@ Title
 Authors
 =======
 
-Andrea Barisani ¹ <andrea@inversepath.com>,  ² <andrea.barisani@f-secure.com>  
-Andrej Rosano   ¹ <andrej@inversepath.com>,  ² <andrej.rosano@f-secure.com>  
-Daniele Bianco  ¹ <daniele@inversepath.com>, ² <daniele.bianco@f-secure.com>  
+Andrea Barisani ¹ <andrea@inversepath.com>,  ² <andrea.barisani@withsecure.com>  
+Andrej Rosano   ¹ <andrej@inversepath.com>,  ² <andrej.rosano@withsecure.com>  
+Daniele Bianco  ¹ <daniele@inversepath.com>, ² <daniele.bianco@withsecure.com>  
 
 First presentation
 ==================
