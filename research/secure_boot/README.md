@@ -6,7 +6,7 @@ Insecure Boot
 Authors
 =======
 
-Andrea Barisani <andrea.barisani@f-secure.com>  
+Andrea Barisani <andrea@inversepath.com>  
 
 First presentation
 ==================
