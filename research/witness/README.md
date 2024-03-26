@@ -26,7 +26,7 @@ results.
 Repositories
 ============
 
-https://github.com/transparency-dev/armored-witness
-https://github.com/transparency-dev/armored-witness-boot
-https://github.com/transparency-dev/armored-witness-os
+https://github.com/transparency-dev/armored-witness  
+https://github.com/transparency-dev/armored-witness-boot  
+https://github.com/transparency-dev/armored-witness-os  
 https://github.com/transparency-dev/armored-witness-applet
