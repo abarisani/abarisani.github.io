@@ -21,15 +21,17 @@ Video
 
 https://www.youtube.com/watch?v=4QircrJjEtQ&t=1s
 
-Updated presentation
-====================
+Updated presentations
+=====================
 
-October 2020 - GoLab
+October   2020 - GoLab
+September 2024 - OSFC
 
 Video
 -----
 
-https://www.youtube.com/watch?v=aOEl5BCfHv0
+GoLab - https://www.youtube.com/watch?v=aOEl5BCfHv0
+OSFC  - https://vimeo.com/1007707947
 
 Abstract
 ========
