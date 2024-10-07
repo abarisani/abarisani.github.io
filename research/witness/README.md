@@ -13,6 +13,11 @@ First presentation
 
 March 2024 - CanSecWest
 
+Updated presentation
+====================
+
+October 2024 - Transparency.dev Summit
+
 Abstract
 ========
 
