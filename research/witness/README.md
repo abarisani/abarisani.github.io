@@ -23,8 +23,8 @@ Abstract
 
 We are building an Open Source https://transparency.dev/ witness, in
 collaboration with Google. This project entailed creating new hardware (USB
-armory LAN with PoE) software (Trusted OS and Applet) leveraging on TamaGo and
-GoTEE frameworks. This presentation aims to discuss the journey of this
+armory LAN with PoE) and software (Trusted OS and Applet) leveraging on TamaGo
+and GoTEE frameworks. This presentation aims to discuss the journey of this
 project, achievements (such as bare metal Go IRQ handlers…in space!) and
 results.
 
