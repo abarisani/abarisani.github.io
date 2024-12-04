@@ -1,7 +1,7 @@
 Title
 =====
 
-TamaGo - bare metal Go framework for ARM SoCs.
+TamaGo - bare metal Go framework for AMD64/ARM/RISCV-64 processors.
 
 Reducing the attack surface with pure embedded Go.
 
@@ -37,13 +37,13 @@ Abstract
 ========
 
 TamaGo is an Open Source operating environment framework which aims to allow
-deployment of firmware for embedded ARM devices by using 0% C and 100% Go code.
+deployment of firmware for embedded devices by using 0% C and 100% Go code.
 The goal is to dramatically reduce the attack surface posed by complex OSes
 while allowing unencumbered Go applications.
 
-TamaGo is a compiler modification and driver set for ARM SoCs, which allows
-bare metal drivers and applications to be executed with pure Go code and
-minimal deviations from the standard Go runtime.
+TamaGo is a compiler modification and driver set which allows bare metal
+drivers and applications to be executed with pure Go code and minimal
+deviations from the standard Go runtime.
 
 The presentation explores the inspiration, challenges and implementation of
 TamaGo as well as providing sample applications that benefit from a pure Go
