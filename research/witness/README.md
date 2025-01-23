@@ -6,7 +6,7 @@ Armored Witness - Building a Trusted Notary for Bare Metal.
 Authors
 =======
 
-Andrea Barisani <andrea.barisani@withsecure.com>  
+Andrea Barisani <andrea@inversepath.com>  
 
 First presentation
 ==================

@@ -8,8 +8,8 @@ Reducing the attack surface with pure embedded Go.
 Authors
 =======
 
-Andrea Barisani <andrea.barisani@withsecure.com>  
-Andrej Rosano   <andrej.rosano@withsecure.com>  
+Andrea Barisani <andrea@inversepath.com>  
+Andrej Rosano   <andrej@inversepath.com>  
 
 First presentation
 ==================
