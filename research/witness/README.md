@@ -18,6 +18,11 @@ Updated presentation
 
 October 2024 - Transparency.dev Summit
 
+Video
+-----
+
+https://www.youtube.com/watch?v=v9cgvZXRRZU
+
 Abstract
 ========
 
