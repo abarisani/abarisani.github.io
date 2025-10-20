@@ -32,10 +32,11 @@ OPEN SOURCE
 │ USB ARMORY ├─┐         ├──┘             ┌ mxs-dcp                           │
 └────────────┘ └─ MK II ─┘  └─ interlock ─┴ caam-keyblob   ┌──────── go-boot ─┘
                     │                                      │
- Armory Boot  ──────┘             ┌────────┐    ┌─ amd64 ──┘
- Armory Drive ──────┘ ─── arm ────┤ TAMAGO ├────┼─ arm64
- GoTEE        ──────┘     ─┬─     └────────┘    └─ riscv64
-                           └─────── GoTEE ──────┘
+ Armory Boot  ──────┘             ┌────────┐    ┌─ amd64 ──┘       ┄┄┄┄┄┄┄┄┄┄┄
+ Armory Drive ──────┘ ─── arm ────┤ TAMAGO ├────┼─ arm64           ┆ocert.org┆
+ Armored Witness ───┘     ─┬─     └────────┘    └─ riscv64         ┆ tenshi  ┆
+                           └─────── GoTEE ──────┐  ───┬───         ┆ ftester ┆
+                                                └─────┘            ┄┄┄┄┄┄┄┄┄┄┄
       </pre>
 
       <h2>whoami</h2>
