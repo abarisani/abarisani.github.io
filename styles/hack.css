@@ -4,7 +4,7 @@ html {
 }
 
 @font-face {
-  font-family: 'Berkeley Mono';
+  font-family: 'Berkeley Mono', monospace;
   font-stretch: normal;
   font-weight: normal;
   font-style: normal;
@@ -22,7 +22,7 @@ body {
     font-size: 1rem;
     line-height: 1.5rem;
     margin: 0;
-    font-family: 'Berkeley Mono';
+    font-family: 'Berkeley Mono', monospace;
     word-wrap: break-word
 }
 
@@ -37,6 +37,8 @@ fieldset {
 }
 
 pre {
+    font-family: 'Berkeley Mono', monospace;
+    line-height: 1.17;
     padding: 2rem;
     margin: 1.75rem 0;
     background-color: #fff;
