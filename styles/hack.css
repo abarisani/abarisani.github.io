@@ -1,5 +1,6 @@
 html {
-    font-size: 80%
+    font-size: 80%;
+    -webkit-text-size-adjust: 100%;
 }
 
 @font-face {
