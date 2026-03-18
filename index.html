@@ -59,11 +59,11 @@ OPEN SOURCE
 ┌────────────┐ ┌─ MK I ──┐  ┌─ crucible   ┌ mxc-scc2       boot-transparency ─┐
 │ USB ARMORY ├─┐         ├──┘             ┌ mxs-dcp                           │
 └────────────┘ └─ MK II ─┘  └─ interlock ─┴ caam-keyblob   ┌──────── go-boot ─┘
-                    │                                      │
- Armory Boot  ──────┘             ┌────────┐    ┌─ amd64 ──┘       ┄┄┄┄┄┄┄┄┄┄┄
- Armory Drive ──────┘ ─── arm ────┤ TAMAGO ├────┼─ arm64           ┆ocert.org┆
- Armored Witness ───┘     ─┬─     └────────┘    └─ riscv64         ┆ tenshi  ┆
-                           │                       ───┬───         ┆ ftester ┆
+                    │                                      │ ┌────── kotama
+ Armory Boot  ──────┘             ┌────────┐    ┌─ amd64 ──┘ │
+ Armory Drive ──────┘ ─── arm ────┤ TAMAGO ├────┼─ arm64     │     ┄┄┄┄┄┄┄┄┄┄┄
+ Armored Witness ───┘     ─┬─     └────────┘    └─ riscv64   │     ┆ tenshi  ┆
+                           │                       ───┬──────┘     ┆ ftester ┆
                            └─────── GoTEE ────────────┘            ┄┄┄┄┄┄┄┄┄┄┄
 かいしゃ
 ───────────────────────────────────────────────────────┬───────────────────────
@@ -173,7 +173,13 @@ Sysadmin and Security Officer • NE&T, Webtechna             ← 2000/11 - 2001
 
       <ul>
         <li>
-          <a href="https://github.com/usbarmory/tamago">TamaGo - bare metal Go</a>
+          <a href="https://github.com/usbarmory/tamago">TamaGo - bare metal Go</a> | <a href="https://github.com/usbarmory/kotama">Tiny RV64 TamaGo</a>
+        </li>
+
+        <br/>
+
+        <li>
+          <a href="https://github.com/abarisani/kanzashi">Bare Metal Agent</a>
         </li>
 
         <br/>
@@ -362,6 +368,14 @@ Sysadmin and Security Officer • NE&T, Webtechna             ← 2000/11 - 2001
       </div>
 
      <table>
+        <tbody>
+          <tr>
+            <td>GopherCon Europe</td>
+            <td>2026-06-15/2026-06-18</td>
+            <td>Berlin, Germany</td>
+            <td><a href="#tamago" title="TamaGo - Bare Metal Go From Embedded to Confidential VMs" style="border-bottom:0px">&#x1f5a7;</a></td>
+        </tbody>
+
         <tbody>
           <tr>
             <td>Transparency.dev Summit</td>

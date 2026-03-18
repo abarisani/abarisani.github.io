@@ -1,7 +1,7 @@
 Title
 =====
 
-TamaGo - bare metal Go framework for AMD64/ARM/RISCV-64 processors.
+TamaGo - bare metal Go
 
 Reducing the attack surface with pure embedded Go.
 
@@ -24,9 +24,10 @@ https://www.youtube.com/watch?v=4QircrJjEtQ&t=1s
 Updated presentations
 =====================
 
-October   2020 - GoLab - https://www.youtube.com/watch?v=aOEl5BCfHv0  
-September 2024 - OSFCO - https://vimeo.com/1007707947  
-October   2025 - OSFC  - https://vimeo.com/1129477396
+October   2020 - GoLab      - https://www.youtube.com/watch?v=aOEl5BCfHv0  
+September 2024 - OSFCO      - https://vimeo.com/1007707947  
+October   2025 - OSFC       - https://vimeo.com/1129477396
+June      2026 - Gophercon  - TBA
 
 Abstract
 ========
@@ -50,7 +51,11 @@ This enables the creation of HSMs, cryptocurrency stacks and many more
 applications without the requirement for complex OSes and libraries as
 dependencies.
 
-Repository
-==========
+Repositories
+============
 
 https://github.com/usbarmory/tamago
+https://github.com/usbarmory/tamago-example
+https://github.com/usbarmory/GoTEE
+https://github.com/usbarmory/GoTEE-example
+https://github.com/usbarmory/kotama
