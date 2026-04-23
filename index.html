@@ -56,14 +56,14 @@ EXPERTISE
 OPEN SOURCE
 ───────────────────────────────────────────────────────────────────────────────
 
-┌────────────┐ ┌─ MK I ──┐  ┌─ crucible   ┌ mxc-scc2       boot-transparency ─┐
-│ USB ARMORY ├─┐         ├──┘             ┌ mxs-dcp                           │
-└────────────┘ └─ MK II ─┘  └─ interlock ─┴ caam-keyblob   ┌──────── go-boot ─┘
-                    │                                      │ ┌────── kotama
+┌────────────┐ ┌─ MK I ──┐  ┌─ crucible   ┌─ mxc-scc2      boot-transparency ─┐
+│ USB ARMORY ├─┐         ├──┘             ┌─ mxs-dcp       ┌──────── go-boot ─┘
+└────────────┘ └─ MK II ─┘  └─ interlock ─┴─ caam-keyblob  ┌────────── kanzashi
+                    │                                      │ ┌────────── kotama
  Armory Boot  ──────┘             ┌────────┐    ┌─ amd64 ──┘ │
  Armory Drive ──────┘ ─── arm ────┤ TAMAGO ├────┼─ arm64     │     ┄┄┄┄┄┄┄┄┄┄┄
- Armored Witness ───┘     ─┬─     └────────┘    └─ riscv64   │     ┆ tenshi  ┆
-                           │                       ───┬──────┘     ┆ ftester ┆
+ Armored Witness ───┘     ─┬─     └────────┘    └─ riscv64 ──┘     ┆ tenshi  ┆
+                           │                       ───┬───         ┆ ftester ┆
                            └─────── GoTEE ────────────┘            ┄┄┄┄┄┄┄┄┄┄┄
 かいしゃ
 ───────────────────────────────────────────────────────┬───────────────────────
