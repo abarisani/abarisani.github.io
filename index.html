@@ -1,1246 +1,536 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>andrea.bio</title>
-    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="./styles/prism.css">
-    <link rel="stylesheet" href="./styles/hack.css?t=1473587248287">
-    <link rel="stylesheet" href="./styles/site.css?t=1473587248286">
-  </head>
-  <body class="hack"><a href="https://github.com/abarisani" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-    <div class="main container">
-      <h2>andrea.bio</h2>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Andrea Barisani — security researcher - hacker - tamagopher">
+<meta property="og:description" content="Andrea Barisani — security researcher - hacker - tamagopher">
+<meta property="og:url" content="https://andrea.bio">
+<meta property="og:type" content="website">
+<meta name="description" content="Andrea Barisani — security researcher - hacker - tamagopher">
+<title>Andrea Barisani</title>
+<style>
+  @font-face {
+    font-family: 'Berkeley Mono';
+    src: url('/styles/BerkeleyMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
 
-      <p><strong>Andrea Barisani</strong> is an internationally recognized security researcher.
-         Since owning his first Commodore-64 he has never stopped studying new
-         technologies, developing unconventional attack vectors and exploring what makes
-         things tick...and break.
-      </p>
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --ink: #1a1a1a;
+    --accent: #b13b1e;
+    --link: #1a1a1a;
+    --link-hover: #b13b1e;
+    --mono: 'Berkeley Mono', 'TX-02', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
 
-      <p>His experience builds on large-scale infrastructure defense,
-         penetration testing and code auditing with particular focus on safety critical
-         environments, with more than 20 years of professional experience in security
-         consulting.
-      </p>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-      <p>His main focus lies on the converge between secure hardware and
-         software, an interest consolidated in the authorship of the USB armory hardware
-         project and the TamaGo bare metal framework.
-      </p>
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--mono);
+    -webkit-text-size-adjust: 100%;
+  }
 
-      <p>He is a well known international speaker, having presented at
-         BlackHat, CanSecWest, Chaos Communication Congress, DEFCON, Hack In The Box,
-         among many other conferences, speaking about innovative research on automotive
-         hacking, side-channel attacks, payment systems, embedded system security and
-         many other topics.
-      </p>
+  html {
+    scrollbar-gutter: stable;
+  }
 
-      <h2>Datasheet</h2>
-      <pre>
+  body {
+    min-height: 100vh;
+    padding: 32px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .sheet {
+    max-width: max-content;
+    margin: 0 auto;
+    font-size: clamp(9px, 1.7vw, 14px);
+    line-height: 1.17;
+  }
+
+  pre.datasheet {
+    font-family: var(--mono);
+    font-size: inherit;
+    line-height: inherit;
+    white-space: pre;
+    color: var(--ink);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    tab-size: 4;
+    margin: 0;
+  }
+
+  pre.datasheet a,
+  .conferences a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(26,26,26,0.25);
+    transition: color 0.12s, text-decoration-color 0.12s;
+  }
+  pre.datasheet a:hover,
+  pre.datasheet a:focus,
+  .conferences a:hover,
+  .conferences a:focus {
+    color: var(--link-hover);
+    text-decoration-color: var(--link-hover);
+    outline: none;
+  }
+
+  pre.datasheet .em,
+  .conferences .em { color: var(--accent); }
+
+  ::selection { background: var(--ink); color: var(--bg); }
+
+  .conferences {
+    font-family: var(--mono);
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--ink);
+  }
+
+  .years {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1ch;
+    margin-bottom: 0.4em;
+  }
+  .years button {
+    font: inherit;
+    color: var(--link);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(26,26,26,0.25);
+    transition: color 0.12s, text-decoration-color 0.12s;
+  }
+  .years button:hover,
+  .years button:focus {
+    color: var(--link-hover);
+    text-decoration-color: var(--link-hover);
+    outline: none;
+  }
+  .years button.is-open {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+  .year-panel {
+    display: none;
+    margin: 0;
+    white-space: pre;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-family: var(--mono);
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .year-panel.is-open { display: block; }
+
+  @media (min-width: 960px) {
+    .sheet { font-size: 14px; }
+  }
+  @media (max-width: 520px) {
+    body { padding: 16px 8px; }
+    .sheet { font-size: 10px; }
+  }
+  .years .spacer { visibility: hidden; }
+
+  .tagline { color: var(--ink); opacity: 0.55; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+<pre class="datasheet">
+DATASHEET                                                       <strong>ANDREA BARISANI</strong>
+───────────────────────────────────────────────────────────────────────────────
+Twenty years of work at the convergence of secure hardware and software,
+penetration testing, code auditing, and security engineering for
+mission-critical environments.
+
+Author of the <a href="#usbarmory">USB armory</a> and the <a href="#tamago">TamaGo</a> bare-metal framework.
+
+Co-author of the very first research on vehicle security, innovative
+side-channel attacks, flaws in EMV payment systems, exotic packet-in-packet
+attacks.
+
+Since owning his first Commodore-64 he has never stopped studying new
+technologies, developing unconventional attack vectors, and exploring what
+makes things tick — and break.
+
+DOMAINS
+───────────────────────────────────────────────────────────────────────────────
+    Automotive • Avionics • Consumer • Enterprise • Financial • Industrial    
+
 EXPERTISE
 ───────────────────────────────────────────────────────────────────────────────
 ┌──────────┐                                          ┌───────────┬─────────┐
-│ HARDWARE ├───┐            ┌───────────── research → │   RDS-TMC │ TEMPEST │█
-└──────────┘   │            │                         │ 802.3 PIP │ EMV     │█
+│ HARDWARE ├───┐            ┌───────────── <a href="#research">research</a> → │   <a href="#rds-tmc" class="em">RDS-TMC</a> │ <a href="#tempest" class="em">TEMPEST</a> │█
+└──────────┘   │            │                         │ <a href="#pip" class="em">802.3 PIP</a> │ <a href="#emv" class="em">EMV</a>     │█
 ┌──────────┐   │  ░░░░░░░░  ├── penetration testing   └─────────────────────┘█
 │ FIRMWARE ├───┼─ SECURITY ─┤                           ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 └──────────┘   │  ░░░░░░░░  ├──────── code auditing
 ┌──────────┐   │            │                         ┌────────────┬────────┐
-│ SOFTWARE ├───┘            └────────── engineering → │ USB ARMORY │ TAMAGO │█
+│ SOFTWARE ├───┘            └────────── engineering → │ <a href="#usbarmory" class="em">USB ARMORY</a> │ <a href="#tamago" class="em">TAMAGO</a> │█
 └──────────┘                                          └─────────────────────┘█
                                                         ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-OPEN SOURCE
+<a href="https://github.com/abarisani">OPEN SOURCE</a>
 ───────────────────────────────────────────────────────────────────────────────
+┌────────────┐ ┌─ MK I ──┐  ┌─ <a href="#crucible">crucible</a>   ┌─ <a href="#mxc-scc2">mxc-scc2</a>      <a href="#boot-transparency">boot-transparency</a> ─┐
+│ <a href="#usbarmory">USB ARMORY</a> ├─┐         ├──┘             ┌─ <a href="#mxs-dcp">mxs-dcp</a>       ┌──────── <a href="#go-boot">go-boot</a> ─┘
+└────────────┘ └─ MK II ─┘  └─ <a href="#interlock">interlock</a> ─┴─ <a href="#caam-keyblob">caam-keyblob</a>  ┌────────── <a href="#kanzashi">kanzashi</a>
+                    │                                      │ ┌────────── <a href="#kotama">kotama</a>
+ <a href="#armory-boot">Armory Boot</a>  ──────┘             ┌────────┐    ┌─ amd64 ──┘ │
+ <a href="#armory-drive">Armory Drive</a> ──────┘ ─── arm ────┤ <a href="#tamago" class="em">TAMAGO</a> ├────┼─ arm64     │     ┄┄┄┄┄┄┄┄┄┄┄
+ <a href="#armored-witness">Armored Witness</a> ───┘     ─┬─     └────────┘    └─ riscv64 ──┘     ┆ <a href="#tenshi">tenshi</a>  ┆
+                           │                       ───┬───         ┆ <a href="#ftester">ftester</a> ┆
+                           └─────── <a href="#gotee">GoTEE</a> ────────────┘            ┄┄┄┄┄┄┄┄┄┄┄
 
-┌────────────┐ ┌─ MK I ──┐  ┌─ crucible   ┌─ mxc-scc2      boot-transparency ─┐
-│ USB ARMORY ├─┐         ├──┘             ┌─ mxs-dcp       ┌──────── go-boot ─┘
-└────────────┘ └─ MK II ─┘  └─ interlock ─┴─ caam-keyblob  ┌────────── kanzashi
-                    │                                      │ ┌────────── kotama
- Armory Boot  ──────┘             ┌────────┐    ┌─ amd64 ──┘ │
- Armory Drive ──────┘ ─── arm ────┤ TAMAGO ├────┼─ arm64     │     ┄┄┄┄┄┄┄┄┄┄┄
- Armored Witness ───┘     ─┬─     └────────┘    └─ riscv64 ──┘     ┆ tenshi  ┆
-                           │                       ───┬───         ┆ ftester ┆
-                           └─────── GoTEE ────────────┘            ┄┄┄┄┄┄┄┄┄┄┄
 かいしゃ
 ───────────────────────────────────────────────────────┬───────────────────────
-2025/05 → Head of Security Engineering        Reversec ┤   foundry.reversec.com
+2025/05 → Head of Security Engineering        Reversec ┤   <a href="https://foundry.reversec.com">foundry.reversec.com</a>
 2022/03 → Head of Product Security          WithSecure ┤ foundry withsecure.com
 2017/02 → Head of Hardware Security           F-Secure ┤   foundry f-secure.com
 2017/02 → 🮙🮙🮙🮙🮙🮙🮙 Inverse Path is acquired by F-Secure │ 🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘🮘
 
 FOUNDATION
 ───────────────────────────────────────────────────────┬───────────────────────
-2005/11 → Co-Founder                      Inverse Path ┤        inversepath.com
+2005/11 → Co-Founder                      Inverse Path ┤        <a href="https://inversepath.com">inversepath.com</a>
 
-MISC
+<a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/misc">MISC</a>
 ───────────────────────────────────────────────────────────────────────────────
-Co-Founder • Open Source CSIRT • ocert.org                  ← 2008/03 - 2017/08
+Co-Founder • Open Source CSIRT • <a href="https://ocert.org" class="em">ocert.org</a>                  ← 2008/03 - 2017/08
 Researcher • University of Trieste, Department of Astronomy ← 2005/06 - 2007/12
 UNIX Programming Consultant • London Internet Exchange      ← 2004/11 - 2004/12
 Infrastructure Developer • Gentoo Linux                     ← 2003/07 - 2006/02
 UNIX Security Engineer • Live Network Security              ← 2001/10 - 2005/10
-Sysadmin and Security Officer • NE&T, Webtechna             ← 2000/11 - 2001/07
-      </pre>
-
-      <h2>Outdoor</h2>
-      <p><a href="https://twitter.com/AndreaBarisani/status/1096832712953004034">&#x1f3d4;</a>
-         <a href="https://twitter.com/AndreaBarisani/status/1109817124258758657">&#x1f3c2;</a>
-         <a href="https://twitter.com/AndreaBarisani/status/976480793202749440">&#x1f681;</a>
-         <a href="https://twitter.com/AndreaBarisani/status/1007857111190179845">&#x026f0;</a>
-         <a href="https://twitter.com/AndreaBarisani/status/1279882182249635845">&#x1f9d7;</a>
-         <a href="https://twitter.com/AndreaBarisani/status/1045656972949901312">&#x1f3c3;</a>
-      </p>
-
-      <h2>Contact</h2>
-
-      <p>Andrea "<a href="https://twitter.com/AndreaBarisani/status/1014451303798501376">lcars</a>" Barisani | andrea@inversepath.com | PGP/GPG key: <a href="/gpg-andrea.txt">0x864C9B9E</a> | Trieste, Italy</p>
-
-      <h2>Social</h2>
-
-      <p><a href="https://bsky.app/profile/andreabarisani.bsky.social">Bluesky</a> | <a href="https://infosec.exchange/@lcars">Mastodont</a> | <a href="https://twitter.com/andreabarisani">𝕏</a> | <a href="https://www.instagram.com/bakkumira/">Instagram</a></p>
-
-      <h2>Industries</h2>
-
-      <p>security engineering, {software,firmware,hardware} auditing, penetration testing, reverse engineering, cross-domain isolation on safety critical systems, data diodes, embedded system design, HSMs &amp; TEEs, ...</p>
-
-      <div class="grid">
-        <div class="cell -4of12">
-          <div class="card">
-            <header class="card-header"><strong>Automotive</strong></header>
-            <div class="card-body">
-              <div class="inner">Co-author of the very first research on vehicle security, vast experience in securing all kind of automotive embedded systems such as telematic control units, infotainment systems and ECUs.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cell -4of12">
-          <div class="card">
-            <header class="card-header"><strong>Avionics</strong></header>
-            <div class="card-body">
-              <div class="inner">A focal point, with many years of experience, for aircraft and avionics manufacturers in auditing their safety critical systems from hardware or software security issues.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cell -4of12">
-          <div class="card">
-            <header class="card-header"><strong>Consumer</strong></header>
-            <div class="card-body">
-              <div class="inner">Deep knowledge and experience in the convergence between software and hardware, aimed at securing all layers and protect intellectual property on all kind of consumer electronics.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="cell -4of12">
-          <div class="card">
-            <header class="card-header"><strong>Enterprise</strong></header>
-            <div class="card-body">
-              <div class="inner">Vast experience in security auditing for major IT infrastructures of the largest enterprise environments, including large scale penetration testing, application auditing and IDS deployment.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cell -4of12">
-          <div class="card">
-            <header class="card-header"><strong>Financial</strong></header>
-            <div class="card-body">
-              <div class="inner">Co-author of leading research in credit card security, discovering novel flaws in Chip &amp; PIN systems. Vast experience in securing entire banking infrastructures from consumer card chips to POSes and up to transaction backends.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cell -4of12">
-          <div class="card">
-            <header class="card-header"><strong>Industrial</strong></header>
-            <div class="card-body">
-              <div class="inner">Specialized in securing safety critical infrastructure from the ground up, including hardware, firmware and software auditing of proprietary control systems with air, land, sea or space applications.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br/>
-
-      <h2><a href="https://github.com/inversepath/advisories">Advisories</a></h2>
-
-      <h2>Projects</h2>
-
-      <ul>
-        <li>
-          <a href="https://github.com/usbarmory/tamago">TamaGo - bare metal Go</a> | <a href="https://github.com/usbarmory/kotama">Tiny RV64 TamaGo</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/abarisani/kanzashi">Bare Metal Agent</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/usbarmory/usbarmory">USB armory - open source flash-drive-sized computer</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/usbarmory/go-boot">go-boot - bare metal Go UEFI boot manager</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/usbarmory/GoTEE">GoTEE - Go Trusted Execution Environment (TEE)</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/transparency-dev/armored-witness">Armored Witness - Trusted Notary</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/usbarmory/GoKey">GoKey - The bare metal Go smart card</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/usbarmory/armory-drive">Armory Drive - USB encrypted drive with mobile unlock over BLE</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/usbarmory/armory-boot">armory-boot - USB armory boot loader</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/usbarmory/crucible">crucible - One-Time-Programmable (OTP) fusing tool</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/usbarmory/interlock">INTERLOCK - file manager for encrypted storage</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/inversepath/jobun">jobun - FPGA board with integrated 802.3u PHY for Ethernet "soft" MAC experimentation</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/inversepath/SerialCanBus">SerialCanBus - Ruby library for serial CAN bus adapters</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/inversepath/tenshi">tenshi - log monitoring tool</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/inversepath/ftester">FTester - firewall and IDS testing tool</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://ocert.org">oCERT - Open Source Computer Security Incident Response Team</a>
-        </li>
-      </ul>
-
-      <h2>Research</h2>
-
-      <ul>
-        <li>
-          <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/802.3">Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/emv">Chip &amp; PIN is definitely broken - Credit card skimming and PIN harvesting in an EMV world</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/tempest">Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/rds">Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals</a>
-        </li>
-
-        <br/>
-
-        <li>
-          <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/smc">Practical Exploitation of Embedded Systems (features 1st publication of Apple SMC hacking)</a>
-        </li>
-      </ul>
-
-      <div id="speaking">
-      <h2>Conferences</h2>
-      </div>
-
-     <details class="year">
-     <summary>2026</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>GopherCon Europe</td>
-            <td>2026-06-15/2026-06-18</td>
-            <td>Berlin, Germany</td>
-            <td><a href="#tamago" title="TamaGo - Bare Metal Go From Embedded to Confidential VMs" style="border-bottom:0px">&#x1f5a7;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2025</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>Transparency.dev Summit</td>
-            <td>2025-10-20/2025-10-22</td>
-            <td>Gothenburg, Sweden</td>
-            <td><a href="#tamago" title="Implementing transparency in UEFI boot managers" style="border-bottom:0px">&#x1f5a7;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Open Source Firmware Conference<br/>&amp; UEFI Plugfest</td>
-            <td>2025-10-07/2025-10-10</td>
-            <td>Sunnyvale, California</td>
-            <td><a href="#tamago" title="The State of TamaGo + Developing UEFI applications in bare metal Go" style="border-bottom:0px">&#x1f95a;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2024</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>Transparency.dev Summit</td>
-            <td>2024-10-09/2024-10-11</td>
-            <td>London, United Kingdom</td>
-            <td><a href="#witness" title="From Witnessing to Transparent Ecosystems" style="border-bottom:0px">&#x1f5a7;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Open Source Firmware Conference</td>
-            <td>2024-09-03/2024-09-04</td>
-            <td>Bochum, Germany</td>
-            <td><a href="#tamago" title="TamaGo" style="border-bottom:0px">&#x1f95a;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Asilomar Microcomputer Workshop</td>
-            <td>2024-04-24/2024-04-26</td>
-            <td>Pacific Grove, USA</td>
-            <td><a href="#tamago" title="TamaGo" style="border-bottom:0px">&#x1f95a;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>CanSecWest</td>
-            <td>2024-03-20/2024-03-22</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="#witness" title="Armored Witness: Building a Trusted Notary for Bare Metal" style="border-bottom:0px">&#x1f5a7;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2023</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>Airbus CYCON</td>
-            <td>2023-10-10</td>
-            <td>The Internet</td>
-            <td><a href="#tamago" title="TamaGo" style="border-bottom:0px">&#x1f95a;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2020</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>GoLab</td>
-            <td>2020-10-19/2020-10-25</td>
-            <td>The Internet</td>
-            <td><a href="#tamago" title="TamaGo" style="border-bottom:0px">&#x1f95a;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2019</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>Chaos Communication Congress</td>
-            <td>2019-12-27/2019-12-30</td>
-            <td>Leipzig, Germany</td>
-            <td><a href="#tamago" title="TamaGo" style="border-bottom:0px">&#x1f95a;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>escar europe</td>
-            <td>2019-11-19/2019-11-20</td>
-            <td>Stuttgart, Germany</td>
-            <td><a href="#insecure boot" title="Insecure boot" style="border-bottom:0px">&#x1f41e;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Pacsec</td>
-            <td>2019-11-06/2019-11-07</td>
-            <td>Tokyo, Japan</td>
-            <td><a href="#insecure boot" title="Insecure boot" style="border-bottom:0px">&#x1f41e;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>t2</td>
-            <td>2019-10-24/2019-10-25</td>
-            <td>Helsinki, Finland</td>
-            <td><a href="#usbarmory" title="USB armory reloaded" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>escar asia</td>
-            <td>2019-10-01/2019-10-02</td>
-            <td>Tokyo, Japan</td>
-            <td><a href="#insecure boot" title="Insecure boot" style="border-bottom:0px">&#x1f41e;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>BSidesVarazdin</td>
-            <td>2019-09-18</td>
-            <td>Varaždin, Croatia</td>
-            <td><a href="#usbarmory" title="USB armory reloaded" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>No Hat</td>
-            <td>2019-09-14</td>
-            <td>Bergamo, Italy</td>
-            <td><a href="#usbarmory" title="USB armory reloaded" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2018</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>Hack In The Box</td>
-            <td>2018-11-01/2018-11-02</td>
-            <td>Beijing, China</td>
-            <td><a href="#usbarmory" title="USB armory: past, present and future" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Air Power Conference</td>
-            <td>2018-10-30/2018-11-01</td>
-            <td>Helsinki, Finland</td>
-            <td><a href="#avionics" title="Cyber warfare and air operations" style="border-bottom:0px">&#x2708;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>FSec IoT Hacking Summer School</td>
-            <td>2018-07-16/2018-07-22</td>
-            <td>Varaždin, Croatia</td>
-            <td><a href="#avionics" title="Real-life experiences in avionics security assessment" style="border-bottom:0px">&#x2708;</a>,
-                TrustZone</td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Aero'Nov Connection</td>
-            <td>2018-06-27/2018-06-28</td>
-            <td>Marseille, France</td>
-            <td><a href="#avionics" title="Real-life experiences in avionics security assessment" style="border-bottom:0px">&#x2708;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2017</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>SPIME</td>
-            <td>2017-09-20/2017-09-21</td>
-            <td>Torino, Italy</td>
-            <td>IoT Security</td>
-          </tr>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2016</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>Airbus's Aircraft Security User Panel</td>
-            <td>2016-10-17/2016-10-20</td>
-            <td>Marseille, France</td>
-            <td><a href="#keynote" title="Keynote" style="border-bottom:0px">&#x1f3b5;</a></td>
-          </tr>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>FSEC</td>
-            <td>2016-09-14/2016-09-15</td>
-            <td>Varaždin, Croatia</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>The Internet of Broken Things (POLIMI)</td>
-            <td>2016-09-07</td>
-            <td>Milano, Italy</td>
-            <td><a href="#avionics" title="Real-life experiences in avionics security assessment" style="border-bottom:0px">&#x2708;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>RMLL</td>
-            <td>2016-07-04/2016-07-06</td>
-            <td>Paris, France</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Area41</td>
-            <td>2016-06-10/2016-06-11</td>
-            <td>Zurich, Switzerland</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>International Journalism Festival</td>
-            <td>2016-04-06/2016-04-10</td>
-            <td>Perugia, Italy</td>
-            <td><a href="javascript:void(0)" title="Evil maid and physical access attacks" style="border-bottom:0px">&#x1f6c3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>CanSecWest</td>
-            <td>2016-03-15/2016-03-18</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="#dojo" title="Mastering ARM TrustZone" style="border-bottom:0px">&#x1f3eb;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2015</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>t2</td>
-            <td>2015-10-29/2015-10-30</td>
-            <td>Helsinki, Finland</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack.lu</td>
-            <td>2015-10-20/2015-10-22</td>
-            <td>Luxembourg City, Luxembourg</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-          </tr>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>HackInBo</td>
-            <td>2015-10-17</td>
-            <td>Bologna, Italy</td>
-            <td><a href="#ethernet" title="Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface" style="border-bottom:0px">&#x2632;</a>,
-                <a href="#avionics" title="Real-life experiences in avionics security assessment" style="border-bottom:0px">&#x2708;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>44CON</td>
-            <td>2015-09-14/2015-09-15</td>
-            <td>London, United Kingdom</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Black Hat USA</td>
-            <td>2015-08-01/2015-08-06</td>
-            <td>Las Vegas, USA</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack In The Box</td>
-            <td>2015-05-26/2015-05-29</td>
-            <td>Amsterdam, Netherlands</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Black Hat Asia</td>
-            <td>2015-03-26/2015-03-27</td>
-            <td>Singapore</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>CanSecWest</td>
-            <td>2015-03-18/2015-03-20</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="#dojo" title="Mastering ARM TrustZone" style="border-bottom:0px">&#x1f3eb;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>BSidesLjubljana</td>
-            <td>2015-03-12</td>
-            <td>Ljubljana, Slovenia</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2014</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>Chaos Communication Congress</td>
-            <td>2014-12-27/2014-12-30</td>
-            <td>Hamburg, Germany</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a>,
-                <a href="#gamma" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>NoSuchCon</td>
-            <td>2014-11-19/2014-11-21</td>
-            <td>Paris, France</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Pacsec</td>
-            <td>2014-11-12/2014-11-13</td>
-            <td>Tokyo, Japan</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack In The Box</td>
-            <td>2014-10-13/2014-1-16</td>
-            <td>Kuala Lumpur, Malaysia</td>
-            <td><a href="#usbarmory" title="Forging the USB armory" style="border-bottom:0px">&#x1f512;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>PXE</td>
-            <td>2014-05-30</td>
-            <td>Berlin, Germany</td>
-            <td><a href="#inception" title="TEMPEST inception" style="border-bottom:0px">&#x2588;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2013</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>t2</td>
-            <td>2013-10-24/2013-10-25</td>
-            <td>Helsinki, Finland</td>
-            <td><a href="#ethernet" title="Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface" style="border-bottom:0px">&#x2632;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack.lu</td>
-            <td>2013-10-22/2013-10-24</td>
-            <td>Luxembourg City, Luxembourg</td>
-            <td><a href="#ethernet" title="Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface" style="border-bottom:0px">&#x2632;</a></td>
-          </tr>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Black Hat USA</td>
-            <td>2013-07-27/2013-08-01</td>
-            <td>Las Vegas, USA</td>
-            <td><a href="#ethernet" title="Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface" style="border-bottom:0px">&#x2632;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>HITCON</td>
-            <td>2013-07-19/2013-07-20</td>
-            <td>Taipei, Taiwan</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>NoSuchCon</td>
-            <td>2013-05-15/2013-05-17</td>
-            <td>Paris, France</td>
-            <td><a href="#keynote" title="Keynote" style="border-bottom:0px">&#x1f3b5;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>SOURCE</td>
-            <td>2013-04-16/2013-04-18</td>
-            <td>Boston, USA</td>
-            <td><a href="#embedded" title="Practical exploitation of embedded systems" style="border-bottom:0px">&#x1f4bb;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>CFI-CIRT PDD</td>
-            <td>2013-03-26</td>
-            <td>Toronto, Canada</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>IT-Defense</td>
-            <td>2013-01-30/2013-01-31</td>
-            <td>Berlin, Germany</td>
-            <td><a href="#embedded" title="Practical exploitation of embedded systems" style="border-bottom:0px">&#x1f4bb;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2012</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>Hack In The Box</td>
-            <td>2012-10-08/2012-10-08</td>
-            <td>Kuala Lumpur, Malaysia</td>
-            <td><a href="#embedded" title="Practical exploitation of embedded systems" style="border-bottom:0px">&#x1f4bb;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Airbus's Aircraft Security User Panel</td>
-            <td>2012-06-19/2012-06-22</td>
-            <td>Montauban, France</td>
-            <td><a href="#avionics" title="Real-life experiences in avionics security assessment" style="border-bottom:0px">&#x2708;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>(the last) PH-Neutral</td>
-            <td>2012-05-25</td>
-            <td>Berlin, Germany</td>
-            <td><a href="#ethernet" title="Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface" style="border-bottom:0px">&#x2632;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2011</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>IT-Defense</td>
-            <td>2011-02-08/2011-02-10</td>
-            <td>Munich, Germany</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>AVTOKYO</td>
-            <td>2011-11-12</td>
-            <td>Tokyo, Japan</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>t2</td>
-            <td>2011-10-27/2011-10-28</td>
-            <td>Helsinki, Finland</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack In The Box</td>
-            <td>2011-10-10/2011-10-13</td>
-            <td>Kuala Lumpur, Malaysia</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack.lu</td>
-            <td>2011-09-19/2011-09-21</td>
-            <td>Luxembourg City, Luxembourg</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>XCon</td>
-            <td>2011-09-01/2011-09-02</td>
-            <td>Beijing, China</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>DEFCON</td>
-            <td>2011-08-04/2011-08-07</td>
-            <td>Las Vegas, USA</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Black Hat USA</td>
-            <td>2011-08-03/2011-08-04</td>
-            <td>Las Vegas, USA</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>PH-Neutral</td>
-            <td>2011-05-27/2011-05-29</td>
-            <td>Berlin, Germany</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>CanSecWest</td>
-            <td>2011-03-09/2011-03-11</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="#emv" title="Practical EMV PIN interception and fraud detection" style="border-bottom:0px">&#x1f4b3;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>TEDx</td>
-            <td>2011-02-25</td>
-            <td>Trieste, Italy</td>
-            <td>Hacking</td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2010</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>PacSec</td>
-            <td>2010-11-10/2010-11-11</td>
-            <td>Tokyo, Japan</td>
-            <td><a href="#panel" title="panel discussion on Shifting Threat Vectors" style="border-bottom:0px">&#x1f465;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>IT-SECA, CERT-BW</td>
-            <td>2010-06-11</td>
-            <td>Stuttgart, Germany</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a>,
-                <a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>HackCon</td>
-            <td>2010-02-16/2010-02-18</td>
-            <td>Oslo, Norway</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>IT-Defense</td>
-            <td>2010-02-03/2010-02-05</td>
-            <td>Cologne, Germany</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2009</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>t2</td>
-            <td>2009-10-29/2009-10-30</td>
-            <td>Helsinki, Finland</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack In The Box</td>
-            <td>2009-10-05/2009-10-08</td>
-            <td>Kuala Lumpur, Malaysia</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>DEFCON</td>
-            <td>2009-07-30/2009-08-02</td>
-            <td>Las Vegas, USA</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Black Hat USA</td>
-            <td>2009-07-25/2009-07-30</td>
-            <td>Las Vegas, USA</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Shakacon</td>
-            <td>2009-06-08/2009-06-12</td>
-            <td>Honolulu, Hawaii</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>PH-Neutral</td>
-            <td>2009-05-29/2009-05-31</td>
-            <td>Berlin, Germany</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>CanSecWest</td>
-            <td>2009-03-16/2009-03-20</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="#tempest" title="Sniff Keystrokes With Lasers/Voltmeters - Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage" style="border-bottom:0px">&#x1f4e1;</a>,
-                <a href="#dojo" title="Security Masters Dojo: Advanced Linux Hardening" style="border-bottom:0px">&#x1f3eb;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2008</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>PacSec</td>
-            <td>2008-11-10/2008-11-13</td>
-            <td>Tokyo, Japan</td>
-            <td><a href="#dojo" title="Security Masters Dojo: Advanced Linux Hardening" style="border-bottom:0px">&#x1f3eb;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>SecVest</td>
-            <td>2008-09-23/2008-09-24</td>
-            <td>Bergen, Norway</td>
-            <td>oCERT</td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>CanSecWest</td>
-            <td>2008-03-24/2008-03-28</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="#dojo" title="Security Masters Dojo: Advanced Linux Hardening" style="border-bottom:0px">&#x1f3eb;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>HackCon</td>
-            <td>2008-02-06/2008-02-07</td>
-            <td>Oslo, Norway</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>IT-Defense</td>
-            <td>2008-01-21/2008-01-25</td>
-            <td>Hamburg, Germany</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2007</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>PacSec</td>
-            <td>2007-11-29/2007-11-30</td>
-            <td>Tokyo, Japan</td>
-            <td><a href="#dojo" title="Security Masters Dojo: Advanced Linux Hardening" style="border-bottom:0px">&#x1f3eb;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>MEITSEC</td>
-            <td>2007-11-12/2007-11-13</td>
-            <td>Sharjah, Arab Emirates</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack.lu</td>
-            <td>2007-10-18/2007-10-20</td>
-            <td>Luxembourg City, Luxembourg</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-          </tr>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Hack In The Box</td>
-            <td>2007-09-03/2007-09-06</td>
-            <td>Kuala Lumpur, Malaysia</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>DEFCON</td>
-            <td>2007-08-03/2007-08-05</td>
-            <td>Las Vegas, USA</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>Black Hat USA</td>
-            <td>2007-08-01/2007-08-03</td>
-            <td>Las Vegas, USA</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>PH-Neutral</td>
-            <td>2007-05-25/2007-05-27</td>
-            <td>Berlin, Germany</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>AusCERT</td>
-            <td>2007-05-21/2007-05-25</td>
-            <td>Gold Coast, Australia</td>
-            <td><a href="0day" title="Lessons in Open Source security: the tale of a 0-Day incident" style="border-bottom:0px">&#x2623;</a>,
-                <a href="#ldap" title="Building a modern LDAP based security framework" style="border-bottom:0px">&#x1f6c2;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>CanSecWest</td>
-            <td>2007-04-16/2007-04-20</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="#tmc" title="Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals" style="border-bottom:0px">&#x1f697;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>IT Underground</td>
-            <td>2007-03-07/2007-03-09</td>
-            <td>Prague, Czech Republic</td>
-            <td><a href="#ldap" title="Building a modern LDAP based security framework" style="border-bottom:0px">&#x1f6c2;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2006</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>IT Underground</td>
-            <td>2006-10-26/2006-10-27</td>
-            <td>Warsaw, Poland</td>
-            <td><a href="#ldap" title="Building a modern LDAP based security framework" style="border-bottom:0px">&#x1f6c2;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>0sec</td>
-            <td>2006-10-13/2006-10-15</td>
-            <td>Bern, Switzerland</td>
-            <td><a href="#ldap" title="Building a modern LDAP based security framework" style="border-bottom:0px">&#x1f6c2;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>FOSDEM</td>
-            <td>2006-02-26</td>
-            <td>Brussels, Belgium</td>
-            <td><a href="#ldap" title="Building a modern LDAP based security framework" style="border-bottom:0px">&#x1f6c2;</a></td>
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td>EuSecWest</td>
-            <td>2006-02-20/2006-02-21</td>
-            <td>London, UK</td>
-            <td><a href="0day" title="Lessons in Open Source security: the tale of a 0-Day incident" style="border-bottom:0px">&#x2623;</a></td>
-        </tbody>
-     </table>
-     </details>
-
-     <details class="year">
-     <summary>2005</summary>
-     <table>
-        <tbody>
-          <tr>
-            <td>PacSec</td>
-            <td>2005-11-15/2005-11-16</td>
-            <td>Tokyo, Japan</td>
-            <td><a href="#ldap" title="Building a modern LDAP based security framework" style="border-bottom:0px">&#x1f6c2;</a></td>
-        </tbody>
-      </table>
-     </details>
-
-      <br/>
-
-      <div id="keynote">
-        &#x1f3b5; Keynote
-      </div>
-
-      <div id="panel">
-        &#x1f465; Panel
-      </div>
-
-      <div id="tamago">
-        &#x1f95a; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/tamago">TamaGo</a>
-      </div>
-
-      <div id="usbarmory">
-        &#x1f512; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/usbarmory">USB armory</a>
-      </div>
-
-      <div id="witness">
-        &#x1f5a7; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/witness">Armored Witness</a>
-      </div>
-
-      <div id="insecure boot">
-        &#x1f41e; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/secure_boot">Insecure Boot</a>
-      </div>
-
-      <div id="emv">
-        &#x1f4b3; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/emv">Practical EMV PIN interception and fraud detection</a>
-      </div>
-
-      <div id="ethernet">
-        &#x2632; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/802.3">Fully arbitrary 802.3 packet injection: maximizing the Ethernet attack surface</a>
-      </div>
-
-      <div id="embedded">
-        &#x1f4bb; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/smc">Practical exploitation of embedded systems</a>
-      </div>
-
-      <div id="avionics">
-        &#x2708; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/avionics">Real-life experiences in avionics security assessment</a>
-      </div>
-
-      <div id="inception">
-        &#x2588; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/inception">TEMPEST inception</a>
-      </div>
-
-      <div id="tempest">
-        &#x1f4e1; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/tempest">Side Channel Attacks Using Optical Sampling Of Mechanical Energy And Power Line Leakage</a>
-      </div>
-
-      <div id="tmc">
-        &#x1f697; <a href="https://github.com/abarisani/abarisani.github.io/tree/master/research/rds">Unusual Car Navigation Tricks: Injecting RDS-TMC Traffic Information Signals</a>
-      </div>
-
-      <div id="0day">
-        &#x2623; Lessons in Open Source security: the tale of a 0-Day incident
-      </div>
-
-      <div id="ldap">
-        &#x1f6c2; Building a modern LDAP based security framework
-      </div>
-
-      <div id="dojo">
-        &#x1f3eb; Security Masters Dojo
-      </div>
-
-      <footer class="footer">source: <a href="https://github.com/abarisani/abarisani.github.io">abarisani.github.io</a></footer>
-    </div>
-  </body>
+Sysadmin and Security Officer • NE&amp;T, Webtechna             ← 2000/11 - 2001/07
+
+TALKS
+───────────────────────────────────────────────────────────────────────────────
+</pre>
+
+<section class="conferences" aria-label="Conferences">
+  <noscript><p>Conference details require JavaScript</p></noscript>
+  <div class="years" role="tablist">
+    <button type="button" data-all>▾ all </button>
+    <button type="button" data-year="2026">2026</button>
+    <button type="button" data-year="2025">2025</button>
+    <button type="button" data-year="2024">2024</button>
+    <button type="button" data-year="2023">2023</button>
+    <button type="button" data-year="2020">2020</button>
+    <button type="button" data-year="2019">2019</button>
+    <button type="button" data-year="2018">2018</button>
+    <button type="button" data-year="2017">2017</button>
+    <button type="button" data-year="2016">2016</button>
+    <button type="button" data-year="2015">2015</button>
+    <button type="button" data-year="2014">2014</button>
+    <button type="button" data-year="2013">2013</button>
+    <button type="button" data-year="2012">2012</button>
+    <button type="button" data-year="2011">2011</button>
+  </div>
+
+  <div class="years" role="tablist">
+    <span aria-hidden="true" class="spacer">▾ all</span>
+    <button type="button" data-year="2010">2010</button>
+    <button type="button" data-year="2009">2009</button>
+    <button type="button" data-year="2008">2008</button>
+    <button type="button" data-year="2007">2007</button>
+    <button type="button" data-year="2006">2006</button>
+    <button type="button" data-year="2005">2005</button>
+  </div>
+
+<pre class="year-panel" data-year="2026">
+─ 2026 ───────────────────────────────────────────────┬────────────────────────
+Jun → GopherCon Europe                • Berlin        ┤                  <a href="#tamago-talk">TamaGo</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2025">
+─ 2025 ───────────────────────────────────────────────┬────────────────────────
+Oct → Transparency.dev Summit         • Gothenburg    ┤         <a href="#armored-witness-talk">Armored Witness</a>
+Oct → Open Source Firmware Conference • Sunnyvale     ┤                  <a href="#tamago-talk">TamaGo</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2024">
+─ 2024 ───────────────────────────────────────────────┬────────────────────────
+Oct → Transparency.dev Summit         • London        ┤         <a href="#armored-witness-talk">Armored Witness</a>
+Sep → Open Source Firmware Conference • Bochum        ┤                  <a href="#tamago-talk">TamaGo</a>
+Apr → Asilomar Microcomputer Workshop • Pacific Grove ┤                  <a href="#tamago-talk">TamaGo</a>
+Mar → CanSecWest                      • Vancouver     ┤         <a href="#armored-witness-talk">Armored Witness</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2023">
+─ 2023 ───────────────────────────────────────────────┬────────────────────────
+Oct → Airbus CYCON                    • Undisclosed   ┤                  <a href="#tamago-talk">TamaGo</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2020">
+─ 2020 ───────────────────────────────────────────────┬────────────────────────
+Oct → GoLab                           • The Internet  ┤                  <a href="#tamago-talk">TamaGo</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2019">
+─ 2019 ───────────────────────────────────────────────┬────────────────────────
+Dec → Chaos Communication Congress    • Leipzig       ┤                  <a href="#tamago-talk">TamaGo</a>
+Nov → escar europe                    • Stuttgart     ┤           <a href="#insecure-boot">Insecure Boot</a>
+Nov → PacSec                          • Tokyo         ┤           <a href="#insecure-boot">Insecure Boot</a>
+Oct → t2                              • Helsinki      ┤              <a href="#usbarmory-talk">USB armory</a>
+Oct → escar asia                      • Tokyo         ┤           <a href="#insecure-boot">Insecure Boot</a>
+Sep → BSidesVarazdin                  • Varaždin      ┤              <a href="#usbarmory-talk">USB armory</a>
+Sep → No Hat                          • Bergamo       ┤              <a href="#usbarmory-talk">USB armory</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2018">
+─ 2018 ───────────────────────────────────────────────┬────────────────────────
+Nov → Hack In The Box                 • Beijing       ┤              <a href="#usbarmory-talk">USB armory</a>
+Oct → Air Power Conference            • Helsinki      ┤       <a href="#avionics">Avionics security</a>
+Jul → FSec IoT Hacking Summer School  • Varaždin      ┤   TZ, <a href="#avionics">Avionics security</a>
+Jun → Aero'Nov Connection             • Marseille     ┤       <a href="#avionics">Avionics security</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2017">
+─ 2017 ───────────────────────────────────────────────┬────────────────────────
+Sep → SPIME                           • Torino        ┤            IoT Security
+
+</pre>
+
+<pre class="year-panel" data-year="2016">
+─ 2016 ───────────────────────────────────────────────┬────────────────────────
+Oct → Airbus Aircraft Sec. User Panel • Marseille     ┤                 Keynote
+Sep → FSEC                            • Varaždin      ┤              <a href="#usbarmory-talk">USB armory</a>
+Sep → Internet of Broken Things       • Milan         ┤       <a href="#avionics">Avionics security</a>
+Jun → RMLL                            • Paris         ┤              <a href="#usbarmory-talk">USB armory</a>
+Jun → Area41                          • Zurich        ┤              <a href="#usbarmory-talk">USB armory</a>
+Apr → Int'l Journalism Festival       • Perugia       ┤               Evil maid
+Mar → CanSecWest                      • Vancouver     ┤     Mastering TrustZone
+
+</pre>
+
+<pre class="year-panel" data-year="2015">
+─ 2015 ───────────────────────────────────────────────┬────────────────────────
+Oct → t2                              • Helsinki      ┤              <a href="#usbarmory-talk">USB armory</a>
+Oct → Hack.lu                         • Luxembourg    ┤              <a href="#usbarmory-talk">USB armory</a>
+Oct → HackInBo                        • Bologna       ┤     <a href="#pip">802.3 PIP</a>, <a href="#avionics">Avionics</a>
+Sep → 44CON                           • London        ┤              <a href="#usbarmory-talk">USB armory</a>
+Aug → Black Hat USA                   • Las Vegas     ┤              <a href="#usbarmory-talk">USB armory</a>
+May → Hack In The Box                 • Amsterdam     ┤              <a href="#usbarmory-talk">USB armory</a>
+Mar → Black Hat Asia                  • Singapore     ┤              <a href="#usbarmory-talk">USB armory</a>
+Mar → CanSecWest                      • Vancouver     ┤     Mastering TrustZone
+Mar → BSidesLjubljana                 • Ljubljana     ┤              <a href="#usbarmory-talk">USB armory</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2014">
+─ 2014 ───────────────────────────────────────────────┬────────────────────────
+Dec → Chaos Communication Congress    • Hamburg       ┤    <a href="#emv">EMV MITM</a>, <a href="#usbarmory-talk">USB armory</a>
+Nov → NoSuchCon                       • Paris         ┤              <a href="#usbarmory-talk">USB armory</a>
+Nov → PacSec                          • Tokyo         ┤              <a href="#usbarmory-talk">USB armory</a>
+Oct → Hack In The Box                 • Kuala Lumpur  ┤              <a href="#usbarmory-talk">USB armory</a>
+May → PXE                             • Berlin        ┤       <a href="#tempest-inception">TEMPEST inception</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2013">
+─ 2013 ───────────────────────────────────────────────┬────────────────────────
+Oct → t2                              • Helsinki      ┤              <a href="#usbarmory-talk">USB armory</a>
+Oct → Hack.lu                         • Luxembourg    ┤              <a href="#usbarmory-talk">USB armory</a>
+Jul → Black Hat USA                   • Las Vegas     ┤              <a href="#usbarmory-talk">USB armory</a>
+Jul → HITCON                          • Taipei        ┤    <a href="#emv">EMV PIN interception</a>
+May → NoSuchCon                       • Paris         ┤                 Keynote
+Apr → SOURCE                          • Boston        ┤     <a href="#smc">Embedded, Apple SMC</a>
+Mar → CFI-CIRT PDD                    • Toronto       ┤    <a href="#emv">EMV PIN interception</a>
+Jan → IT-Defense                      • Berlin        ┤     <a href="#smc">Embedded, Apple SMC</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2012">
+─ 2012 ───────────────────────────────────────────────┬────────────────────────
+Oct → Hack In The Box                 • Kuala Lumpur  ┤              <a href="#usbarmory-talk">USB armory</a>
+Jun → Airbus Aircraft Sec. User Panel • Montauban     ┤       <a href="#avionics">Avionics security</a>
+May → (the last) PH-Neutral           • Berlin        ┤  <a href="#pip">802.3 Packet-in-Packet</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2011">
+─ 2011 ───────────────────────────────────────────────┬────────────────────────
+Nov → AVTOKYO                         • Tokyo         ┤    <a href="#emv">EMV PIN interception</a>
+Oct → t2                              • Helsinki      ┤    <a href="#emv">EMV PIN interception</a>
+Oct → Hack In The Box                 • Kuala Lumpur  ┤    <a href="#emv">EMV PIN interception</a>
+Sep → Hack.lu                         • Luxembourg    ┤    <a href="#emv">EMV PIN interception</a>
+Sep → XCon                            • Beijing       ┤    <a href="#emv">EMV PIN interception</a>
+Aug → DEFCON                          • Las Vegas     ┤    <a href="#emv">EMV PIN interception</a>
+Aug → Black Hat USA                   • Las Vegas     ┤    <a href="#emv">EMV PIN interception</a>
+May → PH-Neutral                      • Berlin        ┤    <a href="#emv">EMV PIN interception</a>
+Mar → CanSecWest                      • Vancouver     ┤    <a href="#emv">EMV PIN interception</a>
+Feb → IT-Defense                      • Munich        ┤    <a href="#emv">EMV PIN interception</a>
+Feb → TEDx                            • Trieste       ┤              on hacking
+
+</pre>
+
+<pre class="year-panel" data-year="2010">
+─ 2010 ───────────────────────────────────────────────┬────────────────────────
+Nov → PacSec                          • Tokyo         ┤        panel discussion
+Jun → IT-SECA, CERT-BW                • Stuttgart     ┤        <a href="#rds-tmc">RDS-TMC</a>, <a href="#tempest">TEMPEST</a>
+Feb → HackCon                         • Oslo          ┤                 <a href="#tempest">TEMPEST</a>
+Feb → IT-Defense                      • Cologne       ┤                 <a href="#tempest">TEMPEST</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2009">
+─ 2009 ───────────────────────────────────────────────┬────────────────────────
+Oct → t2                              • Helsinki      ┤                 <a href="#tempest">TEMPEST</a>
+Oct → Hack In The Box                 • Kuala Lumpur  ┤                 <a href="#tempest">TEMPEST</a>
+Jul → DEFCON                          • Las Vegas     ┤                 <a href="#tempest">TEMPEST</a>
+Jul → Black Hat USA                   • Las Vegas     ┤                 <a href="#tempest">TEMPEST</a>
+Jun → Shakacon                        • Honolulu      ┤                 <a href="#tempest">TEMPEST</a>
+May → PH-Neutral                      • Berlin        ┤                 <a href="#tempest">TEMPEST</a>
+Mar → CanSecWest                      • Vancouver     ┤                 <a href="#tempest">TEMPEST</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2008">
+─ 2008 ───────────────────────────────────────────────┬────────────────────────
+Nov → PacSec                          • Tokyo         ┤    Linux Hardening Dojo
+Sep → SecVest                         • Bergen        ┤                   <a href="#ocert">oCERT</a>
+Mar → CanSecWest                      • Vancouver     ┤    Linux Hardening Dojo
+Feb → HackCon                         • Oslo          ┤                 <a href="#rds-tmc">RDS-TMC</a>
+Jan → IT-Defense                      • Hamburg       ┤                 <a href="#rds-tmc">RDS-TMC</a>
+
+</pre>
+
+<pre class="year-panel" data-year="2007">
+─ 2007 ───────────────────────────────────────────────┬────────────────────────
+Nov → PacSec                          • Tokyo         ┤    Linux Hardening Dojo
+Nov → MEITSEC                         • Sharjah       ┤                 <a href="#rds-tmc">RDS-TMC</a>
+Oct → Hack.lu                         • Luxembourg    ┤                 <a href="#rds-tmc">RDS-TMC</a>
+Sep → Hack In The Box                 • Kuala Lumpur  ┤                 <a href="#rds-tmc">RDS-TMC</a>
+Aug → DEFCON                          • Las Vegas     ┤                 <a href="#rds-tmc">RDS-TMC</a>
+Aug → Black Hat USA                   • Las Vegas     ┤                 <a href="#rds-tmc">RDS-TMC</a>
+May → PH-Neutral                      • Berlin        ┤                 <a href="#rds-tmc">RDS-TMC</a>
+May → AusCERT                         • Gold Coast    ┤       rsync 0-day, LDAP
+Apr → CanSecWest                      • Vancouver     ┤                 <a href="#rds-tmc">RDS-TMC</a>
+Mar → IT Underground                  • Prague        ┤           LDAP security
+
+</pre>
+
+<pre class="year-panel" data-year="2006">
+─ 2006 ───────────────────────────────────────────────┬────────────────────────
+Oct → IT Underground                  • Warsaw        ┤           LDAP security
+Oct → 0sec                            • Bern          ┤           LDAP security
+Feb → FOSDEM                          • Brussels      ┤           LDAP security
+Feb → EuSecWest                       • London        ┤      Gentoo rsync 0-day
+
+</pre>
+
+<pre class="year-panel" data-year="2005">
+─ 2005 ───────────────────────────────────────────────┬────────────────────────
+Nov → PacSec                          • Tokyo         ┤           LDAP security
+
+</pre>
+
+</section>
+
+<pre class="datasheet">
+
+CONTACT                                                     <span class="tagline">hacker | tamagopher</span>
+───────────────────────────────────────────────────────────────────────────────
+Andrea "<a href="https://twitter.com/AndreaBarisani/status/1014451303798501376">lcars</a>" Barisani▕ andrea@inversepath.com▕ PGP:<a href="/gpg-andrea.txt">0x864C9B9E</a>▕ Trieste, Italy
+
+OUTDOOR                                                                  SOCIAL
+───────────────────────────────────────────────────────────────────────────────
+<a href="https://twitter.com/AndreaBarisani/status/1096832712953004034" title="Mountains">🏔</a> <a href="https://twitter.com/AndreaBarisani/status/1109817124258758657" title="Snowboard">🏂</a> <a href="https://twitter.com/AndreaBarisani/status/976480793202749440" title="Helicopter">🚁</a> <a href="https://twitter.com/AndreaBarisani/status/1007857111190179845" title="Peaks">⛰</a> <a href="https://twitter.com/AndreaBarisani/status/1279882182249635845" title="Climbing">🧗</a> <a href="https://twitter.com/AndreaBarisani/status/1045656972949901312" title="Running">🏃</a>                     <a href="https://bsky.app/profile/andreabarisani.bsky.social">Bluesky</a> | <a href="https://infosec.exchange/@lcars">Mastodon</a> | <a href="https://twitter.com/andreabarisani">𝕏</a> | <a href="https://www.instagram.com/bakkumira/">Instagram</a> | <a href="https://github.com/abarisani">GitHub</a>
+
+</pre>
+
+</div>
+
+<script>
+  const yearBtns = document.querySelectorAll('.years button[data-year]');
+  const allBtn   = document.querySelector('.years button[data-all]');
+  const panels   = document.querySelectorAll('.year-panel');
+
+  function syncAllButton() {
+    const allOpen = Array.from(panels).every(p => p.classList.contains('is-open'));
+    allBtn.classList.toggle('is-open', allOpen);
+  }
+
+  yearBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const year = btn.dataset.year;
+      const panel = document.querySelector('.year-panel[data-year="' + year + '"]');
+      if (!panel) return;
+      const open = panel.classList.toggle('is-open');
+      btn.classList.toggle('is-open', open);
+      syncAllButton();
+    });
+  });
+
+  allBtn.addEventListener('click', () => {
+    const anyClosed = Array.from(panels).some(p => !p.classList.contains('is-open'));
+    panels.forEach(p => p.classList.toggle('is-open', anyClosed));
+    yearBtns.forEach(b => b.classList.toggle('is-open', anyClosed));
+    allBtn.classList.toggle('is-open', anyClosed);
+  });
+
+  const aliases = {
+    'tamago': 'https://github.com/usbarmory/tamago/wiki',
+    'tamago-talk': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/tamago',
+    'usbarmory': 'https://github.com/usbarmory/usbarmory/wiki',
+    'usbarmory-talk': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/usbarmory',
+    'gotee': 'https://github.com/usbarmory/GoTEE',
+    'armored-witness': 'https://github.com/transparency-dev/armored-witness',
+    'armored-witness-talk': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/witness',
+    'rds-tmc': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/rds',
+    'tempest': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/tempest',
+    'tempest-inception': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/inception',
+    'pip': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/802.3',
+    'emv': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/emv',
+    'smc': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/smc',
+    'insecure-boot': 'https://github.com/abarisani/abarisani.github.io/tree/master/secure_boot',
+    'avionics': 'https://github.com/abarisani/abarisani.github.io/tree/master/research/avionics',
+    'research': 'https://github.com/abarisani/abarisani.github.io/tree/master/research',
+    'crucible': 'https://github.com/usbarmory/crucible',
+    'interlock': 'https://github.com/usbarmory/interlock',
+    'mxc-scc2': 'https://github.com/usbarmory/mxc-scc2',
+    'mxs-dcp': 'https://github.com/usbarmory/mxs-dcp',
+    'caam-keyblob': 'https://github.com/usbarmory/caam-keyblob',
+    'boot-transparency': 'https://github.com/usbarmory/boot-transparency',
+    'go-boot': 'https://github.com/usbarmory/go-boot',
+    'kanzashi': 'https://github.com/abarisani/kanzashi',
+    'kotama': 'https://github.com/usbarmory/kotama',
+    'armory-boot': 'https://github.com/usbarmory/armory-boot',
+    'armory-drive': 'https://github.com/usbarmory/armory-drive',
+    'tenshi': 'https://github.com/inversepath/tenshi',
+    'ftester': 'https://github.com/inversepath/ftester',
+  };
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    if (aliases[id]) a.href = aliases[id];
+  });
+</script>
+
+</body>
 </html>
