@@ -46,13 +46,11 @@
   body {
     min-height: 100vh;
     padding: 32px 16px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
   }
 
   .sheet {
-    max-width: max-content;
+    max-width: 100%;
+    width: max-content;
     margin: 0 auto;
     font-size: clamp(9px, 1.7vw, 14px);
     line-height: 1.17;
@@ -146,7 +144,7 @@
   }
   @media (max-width: 520px) {
     body { padding: 16px 8px; }
-    .sheet { font-size: 10px; }
+    .sheet { font-size: clamp(8px, 2.4vw, 11px); }
   }
   .years .spacer { visibility: hidden; }
 
