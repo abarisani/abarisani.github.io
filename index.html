@@ -49,7 +49,6 @@
   }
 
   .sheet {
-    max-width: 100%;
     width: max-content;
     margin: 0 auto;
     font-size: clamp(9px, 1.7vw, 14px);
@@ -62,8 +61,6 @@
     line-height: inherit;
     white-space: pre;
     color: var(--ink);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     tab-size: 4;
     margin: 0;
   }
@@ -100,10 +97,12 @@
 
   .years {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
     gap: 0 1ch;
     margin-bottom: 0.4em;
   }
+  .years button { flex: 0 0 auto; white-space: nowrap; }
   .years button {
     font: inherit;
     color: var(--link);
@@ -131,8 +130,6 @@
     display: none;
     margin: 0;
     white-space: pre;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     font-family: var(--mono);
     font-size: inherit;
     line-height: inherit;
@@ -145,17 +142,15 @@
   @media (max-width: 520px) {
     body { padding: 16px 8px; }
     .sheet { font-size: clamp(8px, 2.4vw, 11px); }
-    width: 100%;
+    width: max-content;
   }
-  pre.datasheet,
-    .year-panel {
-    overflow-x: auto;
-    max-width: 100vw;
-  }
-
   .years .spacer { visibility: hidden; }
-
   .tagline { color: var(--ink); opacity: 0.55; }
+  .outdoor {
+    display: inline-block;
+    width: 2ch;
+    text-align: center;
+}
 </style>
 </head>
 <body>
@@ -466,7 +461,7 @@ Andrea "<a href="https://twitter.com/AndreaBarisani/status/1014451303798501376">
 
 OUTDOOR                                                                  SOCIAL
 ───────────────────────────────────────────────────────────────────────────────
-<a href="https://twitter.com/AndreaBarisani/status/1096832712953004034" title="Mountains">🏔</a> <a href="https://twitter.com/AndreaBarisani/status/1109817124258758657" title="Snowboard">🏂</a> <a href="https://twitter.com/AndreaBarisani/status/976480793202749440" title="Helicopter">🚁</a> <a href="https://twitter.com/AndreaBarisani/status/1007857111190179845" title="Peaks">⛰</a> <a href="https://twitter.com/AndreaBarisani/status/1279882182249635845" title="Climbing">🧗</a> <a href="https://twitter.com/AndreaBarisani/status/1045656972949901312" title="Running">🏃</a>                      <a href="https://bsky.app/profile/andreabarisani.bsky.social">Bluesky</a> | <a href="https://infosec.exchange/@lcars">Mastodon</a> | <a href="https://twitter.com/andreabarisani">𝕏</a> | <a href="https://www.instagram.com/bakkumira/">Instagram</a> | <a href="https://github.com/abarisani">GitHub</a>
+<a href="https://twitter.com/AndreaBarisani/status/1096832712953004034" title="Mountains" class="outdoor">🏔</a> <a href="https://twitter.com/AndreaBarisani/status/1109817124258758657" title="Snowboard" class="outdoor">🏂</a> <a href="https://twitter.com/AndreaBarisani/status/976480793202749440" title="Helicopter" class="outdoor">🚁</a> <a href="https://twitter.com/AndreaBarisani/status/1007857111190179845" title="Peaks" class="outdoor">⛰</a> <a href="https://twitter.com/AndreaBarisani/status/1279882182249635845" title="Climbing" class="outdoor">🧗</a> <a href="https://twitter.com/AndreaBarisani/status/1045656972949901312" title="Running" class="outdoor">🏃</a>                   <a href="https://bsky.app/profile/andreabarisani.bsky.social">Bluesky</a> | <a href="https://infosec.exchange/@lcars">Mastodon</a> | <a href="https://twitter.com/andreabarisani">𝕏</a> | <a href="https://www.instagram.com/bakkumira/">Instagram</a> | <a href="https://github.com/abarisani">GitHub</a>
 
 </pre>
 
