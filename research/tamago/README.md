@@ -26,7 +26,7 @@ Updated presentations
 
 October   2020 - GoLab      - https://www.youtube.com/watch?v=aOEl5BCfHv0  
 September 2024 - OSFCO      - https://vimeo.com/1007707947  
-October   2025 - OSFC       - https://vimeo.com/1129477396
+October   2025 - OSFC       - https://vimeo.com/1129477396  
 June      2026 - Gophercon  - TBA
 
 Abstract
