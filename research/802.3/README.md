@@ -12,7 +12,7 @@ Daniele Bianco <daniele@inversepath.com>
 First presentation
 ==================
 
-July 2013 - Black Hat USA
+May 2012 - (the last) PH-Neutral
 
 Video
 =====
